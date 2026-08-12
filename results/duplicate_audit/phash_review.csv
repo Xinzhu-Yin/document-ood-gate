@@ -1,0 +1,584 @@
+left_index,right_index,left_subset,right_subset,left_path,right_path,phash_distance,review_status,review_note,raw_sha256_equal,pixel_sha256_equal,gray_correlation_256,gray_mae_256
+23,647,N,N,documentcloud_4_idood__pdf3_documentcloud_00029_budget.tif,idood__pdf2_documentcloud_00741_resume.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.1876896731591335,0.11500321328639984
+24,41,N,N,documentcloud_4_idood__pdf3_documentcloud_00030_budget.tif,documentcloud_4_idood__pdf3_documentcloud_00050_budget.tif,0,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9989654385615813,6.845511961728334e-05
+25,2670,N,O,documentcloud_4_idood__pdf3_documentcloud_00031_budget.tif,ood__02517.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.42670538940621433,0.16008299589157104
+35,676,N,N,documentcloud_4_idood__pdf3_documentcloud_00044_memo.tif,idood__pdf2_documentcloud_00771_resume.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.29005299829818415,0.10842499881982803
+52,3445,N,O,documentcloud_4_idood__pdf3_documentcloud_00065_budget.tif,ood__documentcloud_00122.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.2547474141017365,0.05827318876981735
+63,74,N,N,documentcloud_4_idood__pdf3_documentcloud_00079_email.tif,documentcloud_4_idood__pdf3_documentcloud_00099_email.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.40320599892050973,0.013060325756669044
+63,259,N,N,documentcloud_4_idood__pdf3_documentcloud_00079_email.tif,idood__pdf2_documentcloud_00207_email.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.337037934239694,0.012231624685227871
+63,3511,N,O,documentcloud_4_idood__pdf3_documentcloud_00079_email.tif,ood__documentcloud_00188.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.23434936432777587,0.11586806178092957
+74,496,N,N,documentcloud_4_idood__pdf3_documentcloud_00099_email.tif,idood__pdf2_documentcloud_00482_email.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.330139761726031,0.012535064481198788
+90,3185,N,O,idood__pdf2_documentcloud_00029_memo.tif,ood__44ceb1d6-7649-4b12-8e99-2521086e98de.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.21098868978829713,0.1052243560552597
+95,1573,N,O,idood__pdf2_documentcloud_00034_memo.tif,ood__00273.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.2978841349792369,0.07975989580154419
+104,2817,N,O,idood__pdf2_documentcloud_00043_memo.tif,ood__02760.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.1957258095036735,0.07651767879724503
+104,3113,N,O,idood__pdf2_documentcloud_00043_memo.tif,ood__03480.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.11637207921697297,0.0754072517156601
+106,2320,N,O,idood__pdf2_documentcloud_00045_memo.tif,ood__01772.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.17626096994913695,0.10517314076423645
+116,121,N,N,idood__pdf2_documentcloud_00055_memo.tif,idood__pdf2_documentcloud_00062_letter.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.18301080293201594,0.07901335507631302
+116,226,N,N,idood__pdf2_documentcloud_00055_memo.tif,idood__pdf2_documentcloud_00174_letter.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.21517985825872665,0.07547709345817566
+121,213,N,N,idood__pdf2_documentcloud_00062_letter.tif,idood__pdf2_documentcloud_00161_letter.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.28997766152255094,0.06105663627386093
+134,336,N,N,idood__pdf2_documentcloud_00079_letter.tif,idood__pdf2_documentcloud_00298_letter.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.2631789908299167,0.07598438858985901
+160,162,N,N,idood__pdf2_documentcloud_00106_letter.tif,idood__pdf2_documentcloud_00108_letter.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.3587900536242087,0.041150856763124466
+161,164,N,N,idood__pdf2_documentcloud_00107_letter.tif,idood__pdf2_documentcloud_00110_letter.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,0.9999999999999999,0.0
+169,227,N,N,idood__pdf2_documentcloud_00115_letter.tif,idood__pdf2_documentcloud_00175_letter.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.16399760568409372,0.07654424011707306
+169,245,N,N,idood__pdf2_documentcloud_00115_letter.tif,idood__pdf2_documentcloud_00193_letter.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.11287606060489248,0.08478435128927231
+176,178,N,N,idood__pdf2_documentcloud_00122_letter.tif,idood__pdf2_documentcloud_00125_letter.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+180,2754,N,O,idood__pdf2_documentcloud_00127_letter.tif,ood__02637.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.21151761633089142,0.06259603798389435
+180,3056,N,O,idood__pdf2_documentcloud_00127_letter.tif,ood__03380.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.10265147950785364,0.08817915618419647
+195,4119,N,O,idood__pdf2_documentcloud_00142_letter.tif,ood__pdf2_documentcloud_00056_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.25242809755866386,0.07629998028278351
+197,4227,N,O,idood__pdf2_documentcloud_00144_email.tif,ood__pdf2_documentcloud_00577_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.2067444540613372,0.0250443983823061
+201,3903,N,O,idood__pdf2_documentcloud_00149_letter.tif,ood__documentcloud_00580.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.17069255892809446,0.0826360285282135
+208,266,N,N,idood__pdf2_documentcloud_00156_letter.tif,idood__pdf2_documentcloud_00214_letter.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.27005447091638124,0.06276783347129822
+213,993,N,N,idood__pdf2_documentcloud_00161_letter.tif,websearch_8__pdf3_websearch_8_00005_memo.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.20930170394366723,0.07370276004076004
+221,448,N,N,idood__pdf2_documentcloud_00169_letter.tif,idood__pdf2_documentcloud_00429_letter.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.25146877121834044,0.09427273273468018
+226,2724,N,O,idood__pdf2_documentcloud_00174_letter.tif,ood__02597.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.2505208750239482,0.07329429686069489
+228,994,N,N,idood__pdf2_documentcloud_00176_letter.tif,websearch_8__pdf3_websearch_8_00006_memo.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.3175930936577568,0.047591861337423325
+228,3083,N,O,idood__pdf2_documentcloud_00176_letter.tif,ood__03431.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.15815063727200449,0.046625055372714996
+230,3376,N,O,idood__pdf2_documentcloud_00178_letter.tif,ood__documentcloud_00053.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.21186740351664424,0.05538467317819595
+238,840,N,N,idood__pdf2_documentcloud_00186_handwritten.tif,idood__pdf3_documentcloud_00131_handwritten.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+241,3085,N,O,idood__pdf2_documentcloud_00189_letter.tif,ood__03434.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.15859323625414162,0.08635546267032623
+245,3586,N,O,idood__pdf2_documentcloud_00193_letter.tif,ood__documentcloud_00263.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.1658030309525317,0.09147924184799194
+245,4295,N,O,idood__pdf2_documentcloud_00193_letter.tif,ood__pdf2_documentcloud_00832_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.06002296377572144,0.08242540061473846
+253,255,N,N,idood__pdf2_documentcloud_00201_letter.tif,idood__pdf2_documentcloud_00203_letter.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+254,320,N,N,idood__pdf2_documentcloud_00202_email.tif,idood__pdf2_documentcloud_00281_email.tif,4,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.46689654135975267,0.0128885293379426
+256,2441,N,O,idood__pdf2_documentcloud_00204_letter.tif,ood__02007.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.21702332995789153,0.10112537443637848
+258,2921,N,O,idood__pdf2_documentcloud_00206_letter.tif,ood__02944.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.19428333294877448,0.09208475053310394
+258,3172,N,O,idood__pdf2_documentcloud_00206_letter.tif,ood__393d1a35-1af2-4469-8aba-9f9469d424bb.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.2417294734327493,0.09013988077640533
+258,3313,N,O,idood__pdf2_documentcloud_00206_letter.tif,ood__c8cc8b3e-696d-4c07-8850-c3f596b2082c.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.26509438629324267,0.07721473276615143
+258,3393,N,O,idood__pdf2_documentcloud_00206_letter.tif,ood__documentcloud_00070.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.24809867643726338,0.0737055093050003
+258,3595,N,O,idood__pdf2_documentcloud_00206_letter.tif,ood__documentcloud_00272.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.2324790509624247,0.0805058479309082
+263,1760,N,O,idood__pdf2_documentcloud_00211_letter.tif,ood__00658.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.11020648762423335,0.08739838749170303
+271,2652,N,O,idood__pdf2_documentcloud_00221_email.tif,ood__02485.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.09607570037403453,0.018835626542568207
+271,2820,N,O,idood__pdf2_documentcloud_00221_email.tif,ood__02766.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.33619063355884976,0.11212445050477982
+284,2919,N,O,idood__pdf2_documentcloud_00234_scientific_publication.tif,ood__02942.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.18904582062589395,0.08766179531812668
+302,304,N,N,idood__pdf2_documentcloud_00259_news_article.tif,idood__pdf2_documentcloud_00262_news_article.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,0.9999999999999998,0.0
+302,305,N,N,idood__pdf2_documentcloud_00259_news_article.tif,idood__pdf2_documentcloud_00263_news_article.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,0.9999999999999998,0.0
+304,305,N,N,idood__pdf2_documentcloud_00262_news_article.tif,idood__pdf2_documentcloud_00263_news_article.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,0.9999999999999998,0.0
+317,3437,N,O,idood__pdf2_documentcloud_00278_scientific_publication.tif,ood__documentcloud_00114.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.1275161107498046,0.08741903305053711
+320,496,N,N,idood__pdf2_documentcloud_00281_email.tif,idood__pdf2_documentcloud_00482_email.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.32927240493166837,0.014433975331485271
+320,522,N,N,idood__pdf2_documentcloud_00281_email.tif,idood__pdf2_documentcloud_00579_email.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.23648791951139464,0.015975892543792725
+331,2276,N,O,idood__pdf2_documentcloud_00293_handwritten.tif,ood__01686.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.5201221413537361,0.08034780621528625
+338,1826,N,O,idood__pdf2_documentcloud_00300_news_article.tif,ood__00790.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.4838587799113315,0.05728789418935776
+342,3277,N,O,idood__pdf2_documentcloud_00305_email.tif,ood__a35fce28-88df-4051-8e26-54631771813d.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.160578900595207,0.027147658169269562
+372,2702,N,O,idood__pdf2_documentcloud_00342_scientific_publication.tif,ood__02563.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.14270451701222714,0.10465039312839508
+377,396,N,N,idood__pdf2_documentcloud_00356_invoice.tif,idood__pdf2_documentcloud_00375_invoice.tif,2,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.8509186659459141,0.0050216373056173325
+379,393,N,N,idood__pdf2_documentcloud_00358_invoice.tif,idood__pdf2_documentcloud_00372_invoice.tif,0,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9946783602504266,0.000606342451646924
+384,2330,N,O,idood__pdf2_documentcloud_00363_invoice.tif,ood__01800.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.13787354890496575,0.057453107088804245
+386,456,N,N,idood__pdf2_documentcloud_00365_invoice.tif,idood__pdf2_documentcloud_00437_form.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.1486636803447602,0.06261877715587616
+391,3841,N,O,idood__pdf2_documentcloud_00370_invoice.tif,ood__documentcloud_00518.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.21971645755909702,0.047528915107250214
+391,3865,N,O,idood__pdf2_documentcloud_00370_invoice.tif,ood__documentcloud_00542.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.27863587305000465,0.08203429728746414
+402,1823,N,O,idood__pdf2_documentcloud_00382_invoice.tif,ood__00785.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.12592158199745787,0.11861571669578552
+411,420,N,N,idood__pdf2_documentcloud_00391_invoice.tif,idood__pdf2_documentcloud_00400_invoice.tif,4,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.8163363775197767,0.007616767659783363
+428,1113,N,O,idood__pdf2_documentcloud_00408_letter.tif,ood__documentcloud_00860.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.2232746258635352,0.07724148035049438
+430,445,N,N,idood__pdf2_documentcloud_00411_form.tif,idood__pdf2_documentcloud_00426_form.tif,2,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9856306022472743,0.0019464229699224234
+431,2544,N,O,idood__pdf2_documentcloud_00412_form.tif,ood__02208.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.1645758455835173,0.10628405213356018
+437,443,N,N,idood__pdf2_documentcloud_00418_form.tif,idood__pdf2_documentcloud_00424_form.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+440,465,N,N,idood__pdf2_documentcloud_00421_form.tif,idood__pdf2_documentcloud_00446_form.tif,0,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9974918227720158,0.0009975058492273092
+448,2724,N,O,idood__pdf2_documentcloud_00429_letter.tif,ood__02597.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.10565311703273514,0.09219156205654144
+448,3984,N,O,idood__pdf2_documentcloud_00429_letter.tif,ood__documentcloud_00662.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.19209061672451416,0.07183873653411865
+466,2579,N,O,idood__pdf2_documentcloud_00448_form.tif,ood__02307.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.1529545911415402,0.047934018075466156
+489,494,N,N,idood__pdf2_documentcloud_00474_form.tif,idood__pdf2_documentcloud_00480_form.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,0.9999999999999998,0.0
+489,2817,N,O,idood__pdf2_documentcloud_00474_form.tif,ood__02760.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.25807841330908854,0.08901660144329071
+494,2817,N,O,idood__pdf2_documentcloud_00480_form.tif,ood__02760.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.25807841330908854,0.08901660144329071
+496,522,N,N,idood__pdf2_documentcloud_00482_email.tif,idood__pdf2_documentcloud_00579_email.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.5399513206222055,0.008941171690821648
+496,2422,N,O,idood__pdf2_documentcloud_00482_email.tif,ood__01971.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.23041924614386566,0.02122371830046177
+496,2456,N,O,idood__pdf2_documentcloud_00482_email.tif,ood__02030.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.27677774969102326,0.017610615119338036
+523,524,N,N,idood__pdf2_documentcloud_00590_email.tif,idood__pdf2_documentcloud_00592_email.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+523,4238,N,O,idood__pdf2_documentcloud_00590_email.tif,ood__pdf2_documentcloud_00589_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+523,4239,N,O,idood__pdf2_documentcloud_00590_email.tif,ood__pdf2_documentcloud_00591_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+523,4240,N,O,idood__pdf2_documentcloud_00590_email.tif,ood__pdf2_documentcloud_00593_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+523,4241,N,O,idood__pdf2_documentcloud_00590_email.tif,ood__pdf2_documentcloud_00594_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+523,4242,N,O,idood__pdf2_documentcloud_00590_email.tif,ood__pdf2_documentcloud_00595_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+523,4243,N,O,idood__pdf2_documentcloud_00590_email.tif,ood__pdf2_documentcloud_00596_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+523,4244,N,O,idood__pdf2_documentcloud_00590_email.tif,ood__pdf2_documentcloud_00597_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+523,4245,N,O,idood__pdf2_documentcloud_00590_email.tif,ood__pdf2_documentcloud_00598_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+523,4246,N,O,idood__pdf2_documentcloud_00590_email.tif,ood__pdf2_documentcloud_00599_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+523,4247,N,O,idood__pdf2_documentcloud_00590_email.tif,ood__pdf2_documentcloud_00600_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+523,4248,N,O,idood__pdf2_documentcloud_00590_email.tif,ood__pdf2_documentcloud_00601_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+523,4249,N,O,idood__pdf2_documentcloud_00590_email.tif,ood__pdf2_documentcloud_00602_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+524,4238,N,O,idood__pdf2_documentcloud_00592_email.tif,ood__pdf2_documentcloud_00589_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+524,4239,N,O,idood__pdf2_documentcloud_00592_email.tif,ood__pdf2_documentcloud_00591_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+524,4240,N,O,idood__pdf2_documentcloud_00592_email.tif,ood__pdf2_documentcloud_00593_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+524,4241,N,O,idood__pdf2_documentcloud_00592_email.tif,ood__pdf2_documentcloud_00594_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+524,4242,N,O,idood__pdf2_documentcloud_00592_email.tif,ood__pdf2_documentcloud_00595_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+524,4243,N,O,idood__pdf2_documentcloud_00592_email.tif,ood__pdf2_documentcloud_00596_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+524,4244,N,O,idood__pdf2_documentcloud_00592_email.tif,ood__pdf2_documentcloud_00597_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+524,4245,N,O,idood__pdf2_documentcloud_00592_email.tif,ood__pdf2_documentcloud_00598_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+524,4246,N,O,idood__pdf2_documentcloud_00592_email.tif,ood__pdf2_documentcloud_00599_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+524,4247,N,O,idood__pdf2_documentcloud_00592_email.tif,ood__pdf2_documentcloud_00600_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+524,4248,N,O,idood__pdf2_documentcloud_00592_email.tif,ood__pdf2_documentcloud_00601_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+524,4249,N,O,idood__pdf2_documentcloud_00592_email.tif,ood__pdf2_documentcloud_00602_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+527,713,N,N,idood__pdf2_documentcloud_00615_handwritten.tif,idood__pdf3_documentcloud_00003_handwritten.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,0.9999999999999999,0.0
+533,1350,N,O,idood__pdf2_documentcloud_00625_scientific_publication.tif,ood__documentcloud_01097.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.12757258318221742,0.09277523308992386
+542,568,N,N,idood__pdf2_documentcloud_00635_resume.tif,idood__pdf2_documentcloud_00661_resume.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.18049328159526087,0.11686155945062637
+542,1692,N,O,idood__pdf2_documentcloud_00635_resume.tif,ood__00518.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.4658963396200703,0.08579963445663452
+542,3051,N,O,idood__pdf2_documentcloud_00635_resume.tif,ood__03373.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.2833381489995668,0.06459710001945496
+542,3541,N,O,idood__pdf2_documentcloud_00635_resume.tif,ood__documentcloud_00218.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.2203559160714354,0.06558676064014435
+542,3902,N,O,idood__pdf2_documentcloud_00635_resume.tif,ood__documentcloud_00579.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.28118251059200733,0.06486295908689499
+542,3962,N,O,idood__pdf2_documentcloud_00635_resume.tif,ood__documentcloud_00640.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.24697086955046887,0.06897863745689392
+548,676,N,N,idood__pdf2_documentcloud_00641_resume.tif,idood__pdf2_documentcloud_00771_resume.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.06094443694831952,0.16082894802093506
+548,1692,N,O,idood__pdf2_documentcloud_00641_resume.tif,ood__00518.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.47433053490790356,0.11435247212648392
+548,2881,N,O,idood__pdf2_documentcloud_00641_resume.tif,ood__02880.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.30946933557256634,0.14231662452220917
+564,566,N,N,idood__pdf2_documentcloud_00657_resume.tif,idood__pdf2_documentcloud_00659_resume.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+564,2261,N,O,idood__pdf2_documentcloud_00657_resume.tif,ood__01655.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.22673812833060095,0.0928172916173935
+566,2261,N,O,idood__pdf2_documentcloud_00659_resume.tif,ood__01655.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.22673812833060095,0.0928172916173935
+568,1692,N,O,idood__pdf2_documentcloud_00661_resume.tif,ood__00518.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.3461464367115596,0.11434894055128098
+568,2456,N,O,idood__pdf2_documentcloud_00661_resume.tif,ood__02030.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.2560286292587575,0.09165829420089722
+568,3051,N,O,idood__pdf2_documentcloud_00661_resume.tif,ood__03373.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.30084144122258066,0.09028014540672302
+568,3902,N,O,idood__pdf2_documentcloud_00661_resume.tif,ood__documentcloud_00579.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.05224907610285607,0.10018262267112732
+568,3962,N,O,idood__pdf2_documentcloud_00661_resume.tif,ood__documentcloud_00640.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.20892364601905652,0.09562365710735321
+568,4129,N,O,idood__pdf2_documentcloud_00661_resume.tif,ood__pdf2_documentcloud_00218_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.2312338395595442,0.09402411431074142
+578,2033,N,O,idood__pdf2_documentcloud_00671_resume.tif,ood__01240.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.1300361077483895,0.08986468613147736
+585,4085,N,O,idood__pdf2_documentcloud_00678_resume.tif,ood__f11ff93d-6564-4539-9420-28e7b549c6e1.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.25574705067254455,0.07001844793558121
+594,1487,N,O,idood__pdf2_documentcloud_00687_resume.tif,ood__00109.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.2623228615783773,0.055246565490961075
+603,609,N,N,idood__pdf2_documentcloud_00696_resume.tif,idood__pdf2_documentcloud_00702_resume.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+606,1494,N,O,idood__pdf2_documentcloud_00699_resume.tif,ood__00121.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.20901110831383662,0.07678401470184326
+607,2819,N,O,idood__pdf2_documentcloud_00700_resume.tif,ood__02765.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.12707351987227916,0.08115138113498688
+607,3284,N,O,idood__pdf2_documentcloud_00700_resume.tif,ood__a7ce069a-233f-445c-84a6-b54c79ac7e00.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.12053923344316744,0.09179579466581345
+622,3590,N,O,idood__pdf2_documentcloud_00716_resume.tif,ood__documentcloud_00267.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.13053713610404832,0.2819555997848511
+645,1992,N,O,idood__pdf2_documentcloud_00739_resume.tif,ood__01146.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.3131827755454007,0.06629154086112976
+656,2221,N,O,idood__pdf2_documentcloud_00750_resume.tif,ood__01589.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.4633431370289652,0.06979747116565704
+656,2315,N,O,idood__pdf2_documentcloud_00750_resume.tif,ood__01764.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.19257002873886803,0.10306055098772049
+661,1903,N,O,idood__pdf2_documentcloud_00755_resume.tif,ood__00945.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.5534539694136409,0.11735953390598297
+676,2033,N,O,idood__pdf2_documentcloud_00771_resume.tif,ood__01240.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.1021298498666632,0.11515316367149353
+676,3113,N,O,idood__pdf2_documentcloud_00771_resume.tif,ood__03480.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.17936658850383017,0.11395040899515152
+698,4163,N,O,idood__pdf2_documentcloud_00793_resume.tif,ood__pdf2_documentcloud_00507_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.20922076687869653,0.10277362167835236
+715,2506,N,O,idood__pdf3_documentcloud_00005_handwritten.tif,ood__02123.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.26977702816645044,0.17715412378311157
+717,731,N,N,idood__pdf3_documentcloud_00007_handwritten.tif,idood__pdf3_documentcloud_00021_handwritten.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+720,757,N,N,idood__pdf3_documentcloud_00010_handwritten.tif,idood__pdf3_documentcloud_00048_handwritten.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,0.9999999999999999,0.0
+743,762,N,N,idood__pdf3_documentcloud_00033_handwritten.tif,idood__pdf3_documentcloud_00053_handwritten.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,0.9999999999999999,0.0
+754,1713,N,O,idood__pdf3_documentcloud_00045_handwritten.tif,ood__00562.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.061528373466961564,0.018499156460165977
+756,860,N,N,idood__pdf3_documentcloud_00047_handwritten.tif,idood__pdf3_documentcloud_00151_handwritten.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,0.9999999999999999,0.0
+809,826,N,N,idood__pdf3_documentcloud_00100_handwritten.tif,idood__pdf3_documentcloud_00117_handwritten.tif,0,confirmed_near_visual,same page confirmed by side-by-side visual review,False,False,0.9999999802611061,1.1967676982749254e-07
+815,819,N,N,idood__pdf3_documentcloud_00106_handwritten.tif,idood__pdf3_documentcloud_00110_handwritten.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.5928342920324404,0.14172470569610596
+838,2050,N,O,idood__pdf3_documentcloud_00129_handwritten.tif,ood__01272.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.05238839921178787,0.07314398884773254
+838,2471,N,O,idood__pdf3_documentcloud_00129_handwritten.tif,ood__02056.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.037791194043562154,0.08119134604930878
+950,951,N,N,websearch_6__pdf3_websearch_00047_specification.tif,websearch_6__pdf3_websearch_00048_specification.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.15590212105082263,0.12229099124670029
+987,1064,N,O,websearch_7__pdf3_websearch_7_00026_scientific_publication.tif,ood__documentcloud_00811.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.07131341888478508,0.2682245075702667
+990,2949,N,O,websearch_8__pdf3_websearch_8_00002_memo.tif,ood__02994.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.2685081723130613,0.07621148228645325
+999,1261,N,O,websearch_8__pdf3_websearch_8_00011_memo.tif,ood__documentcloud_01008.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.18489783600248413,0.045036520808935165
+1002,4289,O,O,ood__documentcloud_00749.tif,ood__pdf2_documentcloud_00824_ood.tif,0,confirmed_near_visual,same page confirmed by side-by-side visual review,False,False,0.9998526451145838,0.0010526170954108238
+1004,3786,O,O,ood__documentcloud_00751.tif,ood__documentcloud_00463.tif,0,confirmed_near_visual,same page confirmed by side-by-side visual review,False,False,0.9998626358960732,0.0008915919461287558
+1005,1199,O,O,ood__documentcloud_00752.tif,ood__documentcloud_00946.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.18326359695245464,0.08356185257434845
+1013,3332,O,O,ood__documentcloud_00760.tif,ood__documentcloud_00004.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.1976311097263038,0.039604395627975464
+1015,3446,O,O,ood__documentcloud_00762.tif,ood__documentcloud_00123.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.30036313685561916,0.0637463703751564
+1019,1827,O,O,ood__documentcloud_00766.tif,ood__00795.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.11807399148924311,0.0890849307179451
+1019,3854,O,O,ood__documentcloud_00766.tif,ood__documentcloud_00531.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.16366031281715837,0.08925960958003998
+1023,3393,O,O,ood__documentcloud_00770.tif,ood__documentcloud_00070.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.10756423458840217,0.08100208640098572
+1036,2480,O,O,ood__documentcloud_00783.tif,ood__02069.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.6665756499011699,0.08844077587127686
+1036,3185,O,O,ood__documentcloud_00783.tif,ood__44ceb1d6-7649-4b12-8e99-2521086e98de.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.17009340281749924,0.13302306830883026
+1036,4078,O,O,ood__documentcloud_00783.tif,ood__e8852931-5cba-46ad-b920-aabde1b12500.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.4939587204888629,0.11502978205680847
+1039,3985,O,O,ood__documentcloud_00786.tif,ood__documentcloud_00663.tif,0,confirmed_near_visual,same page confirmed by side-by-side visual review,False,False,0.9999111533527014,0.0005135928513482213
+1039,4161,O,O,ood__documentcloud_00786.tif,ood__pdf2_documentcloud_00505_ood.tif,0,confirmed_near_visual,same page confirmed by side-by-side visual review,False,False,0.9999111533527014,0.0005135928513482213
+1063,1760,O,O,ood__documentcloud_00810.tif,ood__00658.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.12602986211953915,0.06974738836288452
+1063,2358,O,O,ood__documentcloud_00810.tif,ood__01844.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.1071932808282352,0.07015248388051987
+1072,1126,O,O,ood__documentcloud_00819.tif,ood__documentcloud_00873.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.19869782729177288,0.07922883331775665
+1079,1177,O,O,ood__documentcloud_00826.tif,ood__documentcloud_00924.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.20834222126582103,0.03725172579288483
+1080,2221,O,O,ood__documentcloud_00827.tif,ood__01589.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.17369443816534522,0.060559917241334915
+1080,2536,O,O,ood__documentcloud_00827.tif,ood__02193.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.18257390753709088,0.06186044216156006
+1083,2815,O,O,ood__documentcloud_00830.tif,ood__02756.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.306605425643547,0.05177725851535797
+1092,3519,O,O,ood__documentcloud_00839.tif,ood__documentcloud_00196.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.4478944446883669,0.022823914885520935
+1112,1397,O,O,ood__documentcloud_00859.tif,documentcloud_4_ood__pdf3_documentcloud_00015_ood.tif,0,confirmed_near_visual,same page confirmed by side-by-side visual review,False,False,0.9998540053357322,0.0011149088386446238
+1115,1401,O,O,ood__documentcloud_00862.tif,documentcloud_4_ood__pdf3_documentcloud_00033_ood.tif,0,confirmed_near_visual,same page confirmed by side-by-side visual review,False,False,0.9998343033481164,0.0019463032949715853
+1116,2775,O,O,ood__documentcloud_00863.tif,ood__02673.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.12007630785057521,0.031778909265995026
+1117,1406,O,O,ood__documentcloud_00864.tif,documentcloud_4_ood__pdf3_documentcloud_00058_ood.tif,0,confirmed_near_visual,same page confirmed by side-by-side visual review,False,False,0.9999491343737418,0.0009591495036147535
+1123,4218,O,O,ood__documentcloud_00870.tif,ood__pdf2_documentcloud_00567_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.07889420762193546,0.05709042027592659
+1124,1665,O,O,ood__documentcloud_00871.tif,ood__00457.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.1232136618075428,0.10694047063589096
+1125,1712,O,O,ood__documentcloud_00872.tif,ood__00561.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.17193477227031323,0.08049064874649048
+1130,4022,O,O,ood__documentcloud_00877.tif,ood__documentcloud_00700.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.4857880681605015,0.01790035329759121
+1160,1161,O,O,ood__documentcloud_00907.tif,ood__documentcloud_00908.tif,0,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9600290090551381,0.004354678560048342
+1174,1199,O,O,ood__documentcloud_00921.tif,ood__documentcloud_00946.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.1303944172000402,0.06950856745243073
+1178,4259,O,O,ood__documentcloud_00925.tif,ood__pdf2_documentcloud_00614_ood.tif,2,confirmed_near_visual,same page confirmed by side-by-side visual review,False,False,0.9996063823862767,0.000677011557854712
+1179,1262,O,O,ood__documentcloud_00926.tif,ood__documentcloud_01009.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.06940189713120472,0.06791028380393982
+1179,1342,O,O,ood__documentcloud_00926.tif,ood__documentcloud_01089.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.20666469866774145,0.058214493095874786
+1179,1352,O,O,ood__documentcloud_00926.tif,ood__documentcloud_01099.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.1350465607735942,0.05252469703555107
+1179,1371,O,O,ood__documentcloud_00926.tif,ood__documentcloud_01118.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.16780703982484527,0.08440987765789032
+1179,1760,O,O,ood__documentcloud_00926.tif,ood__00658.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.11364668533019025,0.07866767048835754
+1179,3313,O,O,ood__documentcloud_00926.tif,ood__c8cc8b3e-696d-4c07-8850-c3f596b2082c.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.1797895343270233,0.06911955773830414
+1179,3362,O,O,ood__documentcloud_00926.tif,ood__documentcloud_00034.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.1837256815590264,0.09173828363418579
+1189,1190,O,O,ood__documentcloud_00936.tif,ood__documentcloud_00937.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+1196,2905,O,O,ood__documentcloud_00943.tif,ood__02919.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.11087398539112661,0.056561339646577835
+1197,2484,O,O,ood__documentcloud_00944.tif,ood__02076.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.21642140443145905,0.08045917004346848
+1205,1206,O,O,ood__documentcloud_00952.tif,ood__documentcloud_00953.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+1220,4189,O,O,ood__documentcloud_00967.tif,ood__pdf2_documentcloud_00535_ood.tif,2,confirmed_near_visual,same page confirmed by side-by-side visual review,False,False,0.9998720589603373,0.0007677264511585236
+1230,3343,O,O,ood__documentcloud_00977.tif,ood__documentcloud_00015.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.30490442353697556,0.03732000291347504
+1252,3461,O,O,ood__documentcloud_00999.tif,ood__documentcloud_00138.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.245482404182287,0.04894043877720833
+1262,2502,O,O,ood__documentcloud_01009.tif,ood__02115.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.21816863793096128,0.06057523936033249
+1262,3825,O,O,ood__documentcloud_01009.tif,ood__documentcloud_00502.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.09920600697292804,0.07764437794685364
+1279,1280,O,O,ood__documentcloud_01026.tif,ood__documentcloud_01027.tif,0,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9929905366820587,0.0005754657904617488
+1279,1394,O,O,ood__documentcloud_01026.tif,ood__documentcloud_01141.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.96117569420321,0.0026571236085146666
+1280,1394,O,O,ood__documentcloud_01027.tif,ood__documentcloud_01141.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9567634332627446,0.0029354318976402283
+1290,3740,O,O,ood__documentcloud_01037.tif,ood__documentcloud_00417.tif,4,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.7220026530622191,0.018225157633423805
+1290,4257,O,O,ood__documentcloud_01037.tif,ood__pdf2_documentcloud_00611_ood.tif,4,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.8009192965783914,0.01394234411418438
+1291,1426,O,O,ood__documentcloud_01038.tif,documentcloud_4_ood__pdf3_documentcloud_00107_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.387395875433141,0.05945182964205742
+1291,3471,O,O,ood__documentcloud_01038.tif,ood__documentcloud_00148.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.5555190010877731,0.043808456510305405
+1291,3783,O,O,ood__documentcloud_01038.tif,ood__documentcloud_00460.tif,4,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9610217815665276,0.004171812441200018
+1314,3695,O,O,ood__documentcloud_01061.tif,ood__documentcloud_00372.tif,0,confirmed_near_visual,same page confirmed by side-by-side visual review,False,False,0.9999407170660517,0.00045100192073732615
+1316,3698,O,O,ood__documentcloud_01063.tif,ood__documentcloud_00375.tif,0,confirmed_near_visual,same page confirmed by side-by-side visual review,False,False,0.9999695080624896,0.0006536745349876583
+1317,3699,O,O,ood__documentcloud_01064.tif,ood__documentcloud_00376.tif,0,confirmed_near_visual,same page confirmed by side-by-side visual review,False,False,0.9999760875905361,0.000689338194206357
+1320,3700,O,O,ood__documentcloud_01067.tif,ood__documentcloud_00377.tif,0,confirmed_near_visual,same page confirmed by side-by-side visual review,False,False,0.9999857250668891,0.0001391840778524056
+1322,3701,O,O,ood__documentcloud_01069.tif,ood__documentcloud_00378.tif,2,confirmed_near_visual,same page confirmed by side-by-side visual review,False,False,0.9998756092972328,0.00038535919156856835
+1325,3706,O,O,ood__documentcloud_01072.tif,ood__documentcloud_00383.tif,0,confirmed_near_visual,same page confirmed by side-by-side visual review,False,False,0.9998920669992717,0.0008452770416624844
+1326,3705,O,O,ood__documentcloud_01073.tif,ood__documentcloud_00382.tif,0,confirmed_near_visual,same page confirmed by side-by-side visual review,False,False,0.9999731789024228,0.0004434622824192047
+1328,3708,O,O,ood__documentcloud_01075.tif,ood__documentcloud_00385.tif,0,confirmed_near_visual,same page confirmed by side-by-side visual review,False,False,0.999946578634878,0.00048145963228307664
+1330,2082,O,O,ood__documentcloud_01077.tif,ood__01326.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.15290156251515305,0.0652155876159668
+1330,3105,O,O,ood__documentcloud_01077.tif,ood__03463.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.14743351074634892,0.06425116956233978
+1342,2582,O,O,ood__documentcloud_01089.tif,ood__02310.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.0654526514281345,0.0645744726061821
+1346,3988,O,O,ood__documentcloud_01093.tif,ood__documentcloud_00666.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.3167898617626847,0.06712663918733597
+1346,4174,O,O,ood__documentcloud_01093.tif,ood__pdf2_documentcloud_00519_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.3167898617626847,0.06712663918733597
+1351,1647,O,O,ood__documentcloud_01098.tif,ood__00431.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.20246737652295643,0.07991846650838852
+1352,3362,O,O,ood__documentcloud_01099.tif,ood__documentcloud_00034.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.1965846638164199,0.08616231381893158
+1360,1809,O,O,ood__documentcloud_01107.tif,ood__00756.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.10797134713692196,0.08569377660751343
+1364,1629,O,O,ood__documentcloud_01111.tif,ood__00396.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.09939885128088971,0.06686627864837646
+1371,3710,O,O,ood__documentcloud_01118.tif,ood__documentcloud_00387.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.18417000911102624,0.10553821921348572
+1371,3776,O,O,ood__documentcloud_01118.tif,ood__documentcloud_00453.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.1173464642271608,0.08761321008205414
+1374,4117,O,O,ood__documentcloud_01121.tif,ood__pdf2_documentcloud_00020_ood.tif,4,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.07876479255469461,0.05910416692495346
+1392,1440,O,O,ood__documentcloud_01139.tif,documentcloud_4_ood__pdf3_documentcloud_00123_ood.tif,4,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.6558026711525166,0.022424913942813873
+1392,3752,O,O,ood__documentcloud_01139.tif,ood__documentcloud_00429.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.8380745492455278,0.01152433454990387
+1392,3976,O,O,ood__documentcloud_01139.tif,ood__documentcloud_00654.tif,2,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.48406430793151056,0.033557187765836716
+1413,1588,O,O,documentcloud_4_ood__pdf3_documentcloud_00088_ood.tif,ood__00300.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.15698000639888546,0.04815433919429779
+1426,3355,O,O,documentcloud_4_ood__pdf3_documentcloud_00107_ood.tif,ood__documentcloud_00027.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.4766546544771322,0.0549321211874485
+1426,3471,O,O,documentcloud_4_ood__pdf3_documentcloud_00107_ood.tif,ood__documentcloud_00148.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.4361572454764671,0.056318871676921844
+1426,3527,O,O,documentcloud_4_ood__pdf3_documentcloud_00107_ood.tif,ood__documentcloud_00204.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.48332183101565335,0.05416223779320717
+1436,2536,O,O,documentcloud_4_ood__pdf3_documentcloud_00119_ood.tif,ood__02193.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.29324919584088144,0.0532025471329689
+1438,2401,O,O,documentcloud_4_ood__pdf3_documentcloud_00121_ood.tif,ood__01927.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.3111591235794979,0.025499828159809113
+1438,3915,O,O,documentcloud_4_ood__pdf3_documentcloud_00121_ood.tif,ood__documentcloud_00592.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.1957525059694768,0.030195586383342743
+1440,3976,O,O,documentcloud_4_ood__pdf3_documentcloud_00123_ood.tif,ood__documentcloud_00654.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.4931006548222154,0.03319157660007477
+1451,2210,O,O,ood__00025.tif,ood__01562.tif,2,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.8433486960924604,0.026270609349012375
+1451,2221,O,O,ood__00025.tif,ood__01589.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.7035466704535055,0.028918636962771416
+1463,2328,O,O,ood__00064.tif,ood__01797.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.8081370398245923,0.018133781850337982
+1463,2517,O,O,ood__00064.tif,ood__02152.tif,0,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9836625712416325,0.0025095620658248663
+1464,3825,O,O,ood__00070.tif,ood__documentcloud_00502.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.1004167529916861,0.09214309602975845
+1487,2866,O,O,ood__00109.tif,ood__02850.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.6175089225639302,0.041636623442173004
+1487,3784,O,O,ood__00109.tif,ood__documentcloud_00461.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.26004459842675093,0.058461323380470276
+1492,3601,O,O,ood__00117.tif,ood__documentcloud_00278.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.1714713272627735,0.0695795938372612
+1503,2955,O,O,ood__00144.tif,ood__03008.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.46805198962451333,0.0574537068605423
+1508,2386,O,O,ood__00156.tif,ood__01895.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.42928783292928696,0.07994510233402252
+1521,2197,O,O,ood__00175.tif,ood__01537.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.05874561480231859,0.09269049763679504
+1534,4085,O,O,ood__00197.tif,ood__f11ff93d-6564-4539-9420-28e7b549c6e1.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.16411216784622532,0.07234514504671097
+1535,2107,O,O,ood__00199.tif,ood__01371.tif,2,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9708356704592355,0.0018258487107232213
+1537,3915,O,O,ood__00203.tif,ood__documentcloud_00592.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.13769898188056132,0.0285544004291296
+1557,2300,O,O,ood__00238.tif,ood__01732.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.25005565369158905,0.06744851171970367
+1564,2910,O,O,ood__00253.tif,ood__02925.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.21751678998605878,0.12236495316028595
+1576,1944,O,O,ood__00276.tif,ood__01036.tif,2,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.8176941558695664,0.025468293577432632
+1576,3075,O,O,ood__00276.tif,ood__03413.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.17139615011956472,0.06437736749649048
+1576,4218,O,O,ood__00276.tif,ood__pdf2_documentcloud_00567_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.07473377140872373,0.059269800782203674
+1580,2613,O,O,ood__00284.tif,ood__02390.tif,0,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9719774376355736,0.000986316124908626
+1580,2845,O,O,ood__00284.tif,ood__02806.tif,0,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9751497311990049,0.0009209127747453749
+1588,2300,O,O,ood__00300.tif,ood__01732.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.14169325952730513,0.05401521176099777
+1595,1838,O,O,ood__00314.tif,ood__00819.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.7087989297180324,0.034917134791612625
+1595,2210,O,O,ood__00314.tif,ood__01562.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.617953441841211,0.03616207465529442
+1595,2221,O,O,ood__00314.tif,ood__01589.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.6040705081214914,0.03041980043053627
+1595,2536,O,O,ood__00314.tif,ood__02193.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.7652019061691461,0.024353865534067154
+1600,2296,O,O,ood__00324.tif,ood__01727.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.6678700467964527,0.02852771244943142
+1600,3513,O,O,ood__00324.tif,ood__documentcloud_00190.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.2767480987225273,0.03576330840587616
+1607,1883,O,O,ood__00337.tif,ood__00912.tif,2,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.33190350132194074,0.05390816181898117
+1607,2846,O,O,ood__00337.tif,ood__02809.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,-0.011298946193720084,0.07773754745721817
+1619,1931,O,O,ood__00365.tif,ood__01008.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9171110285065586,0.010113106109201908
+1620,1684,O,O,ood__00368.tif,ood__00497.tif,2,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9808437907754486,0.0007603664416819811
+1620,1755,O,O,ood__00368.tif,ood__00645.tif,0,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9961313570071999,0.00021152869157958776
+1620,3083,O,O,ood__00368.tif,ood__03431.tif,2,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.5779056334642725,0.01586812362074852
+1640,2111,O,O,ood__00415.tif,ood__01377.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.2000934219531691,0.17434781789779663
+1642,1833,O,O,ood__00424.tif,ood__00811.tif,4,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.6594198031652241,0.026534974575042725
+1647,2349,O,O,ood__00431.tif,ood__01831.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.15318521702362006,0.07376714795827866
+1651,2615,O,O,ood__00437.tif,ood__02399.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.5805665572710433,0.04574321582913399
+1675,2729,O,O,ood__00477.tif,ood__02605.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.2672051270746047,0.08516910672187805
+1677,2794,O,O,ood__00481.tif,ood__02702.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.2259575013415376,0.0845993310213089
+1681,2056,O,O,ood__00491.tif,ood__01281.tif,4,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.15561544809591651,0.0801837295293808
+1681,2393,O,O,ood__00491.tif,ood__01908.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.07890397854874312,0.1310768872499466
+1684,1755,O,O,ood__00497.tif,ood__00645.tif,2,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9822547489126329,0.0007217706297524273
+1684,3083,O,O,ood__00497.tif,ood__03431.tif,2,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.5970299234700793,0.015460683032870293
+1686,1776,O,O,ood__00502.tif,ood__00696.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.7363644845334331,0.015786264091730118
+1686,2060,O,O,ood__00502.tif,ood__01286.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.7190930348465494,0.010665054433047771
+1686,2205,O,O,ood__00502.tif,ood__01552.tif,0,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9479272759995463,0.003803327912464738
+1692,2881,O,O,ood__00518.tif,ood__02880.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.5988671156597942,0.0878279060125351
+1692,3051,O,O,ood__00518.tif,ood__03373.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.5694045809289566,0.061581358313560486
+1692,3541,O,O,ood__00518.tif,ood__documentcloud_00218.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.4437510540904178,0.0648028776049614
+1692,3902,O,O,ood__00518.tif,ood__documentcloud_00579.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.23262743737542746,0.07436840236186981
+1700,1835,O,O,ood__00530.tif,ood__00814.tif,2,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9275750930167315,0.021187756210565567
+1700,2695,O,O,ood__00530.tif,ood__02552.tif,2,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9217335121507987,0.02033272571861744
+1713,1939,O,O,ood__00562.tif,ood__01031.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.1592487728384325,0.05279606580734253
+1727,2471,O,O,ood__00593.tif,ood__02056.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.4986795466926601,0.0605761893093586
+1730,3718,O,O,ood__00598.tif,ood__documentcloud_00395.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.16611532574295657,0.06928633153438568
+1748,1830,O,O,ood__00633.tif,ood__00803.tif,4,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9465528582821272,0.006399774923920631
+1755,3083,O,O,ood__00645.tif,ood__03431.tif,2,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.5793608331013408,0.015827134251594543
+1760,3085,O,O,ood__00658.tif,ood__03434.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.1366155403360406,0.08849911391735077
+1768,2929,O,O,ood__00677.tif,ood__02957.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+1771,2418,O,O,ood__00686.tif,ood__01966.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.12323358283261163,0.028248144313693047
+1776,2060,O,O,ood__00696.tif,ood__01286.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.5347837633288909,0.022207941859960556
+1776,2205,O,O,ood__00696.tif,ood__01552.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.7564282280975035,0.01470737811177969
+1779,2278,O,O,ood__00702.tif,ood__01692.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.046255795553387734,0.05334053561091423
+1788,2707,O,O,ood__00717.tif,ood__02570.tif,4,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.8517100864909025,0.02316828817129135
+1799,3369,O,O,ood__00735.tif,ood__documentcloud_00046.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.02749232548484625,0.002843639813363552
+1809,2375,O,O,ood__00756.tif,ood__01874.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.08388176064539087,0.0835556909441948
+1809,3822,O,O,ood__00756.tif,ood__documentcloud_00499.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.18094476362800543,0.06965343654155731
+1812,2501,O,O,ood__00762.tif,ood__02113.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.4342765025968109,0.011966600082814693
+1812,2552,O,O,ood__00762.tif,ood__02230.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.6519399449117923,0.00680643692612648
+1812,2599,O,O,ood__00762.tif,ood__02351.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.6358541531132492,0.006928387563675642
+1812,2604,O,O,ood__00762.tif,ood__02369.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.5047680051409306,0.009655043482780457
+1812,2883,O,O,ood__00762.tif,ood__02886.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.6498288051540742,0.006851734593510628
+1815,3087,O,O,ood__00773.tif,ood__03436.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.90139731309409,0.01565833017230034
+1823,4076,O,O,ood__00785.tif,ood__e686ae8c-c970-4e6f-84a1-4f845426851a.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.06398126893777975,0.12924978137016296
+1826,3627,O,O,ood__00790.tif,ood__documentcloud_00304.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.3429659167985146,0.0897413045167923
+1832,3171,O,O,ood__00805.tif,ood__38b7c8dc-a357-4d12-8e68-e62e1494cda3.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.20912397690266246,0.040742937475442886
+1835,2695,O,O,ood__00814.tif,ood__02552.tif,2,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.8821704433237109,0.030114924535155296
+1838,2221,O,O,ood__00819.tif,ood__01589.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.715132163701341,0.03228197246789932
+1838,2536,O,O,ood__00819.tif,ood__02193.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.7645690366546499,0.030663223937153816
+1843,2017,O,O,ood__00828.tif,ood__01206.tif,0,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9472047573447855,0.004456523805856705
+1843,2337,O,O,ood__00828.tif,ood__01812.tif,4,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9417447501140309,0.00470533175393939
+1846,2715,O,O,ood__00832.tif,ood__02583.tif,4,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.5594653814547046,0.004922904074192047
+1847,2092,O,O,ood__00833.tif,ood__01343.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.23128602238600177,0.07061767578125
+1857,2090,O,O,ood__00851.tif,ood__01340.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.18328177127447587,0.06442852318286896
+1859,2162,O,O,ood__00857.tif,ood__01476.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.15632380669030227,0.10129149258136749
+1865,2671,O,O,ood__00872.tif,ood__02519.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.5820391800525496,0.05020536482334137
+1876,1899,O,O,ood__00903.tif,ood__00934.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.243538198214243,0.030163751915097237
+1876,1986,O,O,ood__00903.tif,ood__01135.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.31880887129086455,0.02290649339556694
+1883,2846,O,O,ood__00912.tif,ood__02809.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.261458685574377,0.06038249284029007
+1887,2958,O,O,ood__00918.tif,ood__03011.tif,2,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.7313935464854241,0.01154886744916439
+1891,2235,O,O,ood__00926.tif,ood__01613.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.1309217905985513,0.07311783730983734
+1897,3984,O,O,ood__00932.tif,ood__documentcloud_00662.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.21466322658493905,0.07719043642282486
+1899,1986,O,O,ood__00934.tif,ood__01135.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.255261821114053,0.025010591372847557
+1899,2881,O,O,ood__00934.tif,ood__02880.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.16037432808511423,0.11306827515363693
+1903,3174,O,O,ood__00945.tif,ood__3aee023d-8988-4042-ae47-5d0325a34386.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.5962890294318482,0.1093297004699707
+1912,1938,O,O,ood__00969.tif,ood__01030.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.20544998081914442,0.08305872976779938
+1920,3439,O,O,ood__00987.tif,ood__documentcloud_00116.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.14884999833489324,0.08649136126041412
+1925,4221,O,O,ood__00998.tif,ood__pdf2_documentcloud_00570_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.11043646808316597,0.10361836850643158
+1931,2646,O,O,ood__01008.tif,ood__02473.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.8747181846497903,0.014738015830516815
+1938,2300,O,O,ood__01030.tif,ood__01732.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.2664340824178227,0.06944849342107773
+1944,4218,O,O,ood__01036.tif,ood__pdf2_documentcloud_00567_ood.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.08147156148063593,0.05902410298585892
+1953,3977,O,O,ood__01051.tif,ood__documentcloud_00655.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.1292071582089054,0.07338950783014297
+1955,4307,O,O,ood__01056.tif,websearch_9__pdf3_websearch_9_00004_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.14825761784948507,0.06830862909555435
+1958,4287,O,O,ood__01068.tif,ood__pdf2_documentcloud_00822_ood.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.13188391861892898,0.08867138624191284
+1986,3513,O,O,ood__01135.tif,ood__documentcloud_00190.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.34498047194571296,0.01817016303539276
+1991,3679,O,O,ood__01145.tif,ood__documentcloud_00356.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.3898325338466479,0.09214872121810913
+1998,2767,O,O,ood__01155.tif,ood__02658.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.5805171357566744,0.04493683576583862
+2007,3673,O,O,ood__01172.tif,ood__documentcloud_00350.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.788420121345665,0.08207128196954727
+2009,2552,O,O,ood__01179.tif,ood__02230.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.506337855550075,0.00891406461596489
+2009,2599,O,O,ood__01179.tif,ood__02351.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.5167507552939389,0.008599553257226944
+2009,2604,O,O,ood__01179.tif,ood__02369.tif,4,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9739988342875127,0.0006632486474700272
+2009,2883,O,O,ood__01179.tif,ood__02886.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.506460009847658,0.008942129090428352
+2009,2934,O,O,ood__01179.tif,ood__02963.tif,2,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9732597505029407,0.0006276447675190866
+2017,2337,O,O,ood__01206.tif,ood__01812.tif,4,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.933113979254936,0.004994111601263285
+2023,2900,O,O,ood__01216.tif,ood__02911.tif,4,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.09132795772044063,0.05103813856840134
+2025,2471,O,O,ood__01226.tif,ood__02056.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.23109396778881258,0.0919889509677887
+2041,3530,O,O,ood__01258.tif,ood__documentcloud_00207.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,-0.043119344350820744,0.08230464160442352
+2060,2205,O,O,ood__01286.tif,ood__01552.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.7140853915455762,0.011338595300912857
+2066,2493,O,O,ood__01299.tif,ood__02095.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,0.9999999999999998,0.0
+2073,3826,O,O,ood__01311.tif,ood__documentcloud_00503.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.11656089646349237,0.06628692895174026
+2075,2242,O,O,ood__01314.tif,ood__01625.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.8363830519356911,0.02515731379389763
+2097,2306,O,O,ood__01351.tif,ood__01746.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.0745456719885299,0.09283345192670822
+2104,2315,O,O,ood__01364.tif,ood__01764.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.1737745459650437,0.09584182500839233
+2124,2472,O,O,ood__01411.tif,ood__02059.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.14484661661641057,0.06055847927927971
+2133,2895,O,O,ood__01429.tif,ood__02906.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.26463311445342536,0.057562313973903656
+2142,3703,O,O,ood__01444.tif,ood__documentcloud_00380.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.3597756780465239,0.07848910987377167
+2159,3627,O,O,ood__01470.tif,ood__documentcloud_00304.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.3969634185659319,0.09753023087978363
+2165,3002,O,O,ood__01484.tif,ood__03287.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.18918795574566413,0.07290314137935638
+2175,2317,O,O,ood__01500.tif,ood__01766.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.44922179472883456,0.05561146140098572
+2186,2456,O,O,ood__01520.tif,ood__02030.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.1284382415492274,0.02114245668053627
+2195,2794,O,O,ood__01534.tif,ood__02702.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.23792525271865395,0.08829255402088165
+2210,2221,O,O,ood__01562.tif,ood__01589.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.770230298285717,0.02760518342256546
+2210,2620,O,O,ood__01562.tif,ood__02412.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.8421726559086083,0.02843957021832466
+2212,2661,O,O,ood__01564.tif,ood__02506.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.6780468302333973,0.030116958543658257
+2221,2536,O,O,ood__01589.tif,ood__02193.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.6180116838259511,0.033775776624679565
+2221,2620,O,O,ood__01589.tif,ood__02412.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.6972234450782466,0.03204477205872536
+2236,2589,O,O,ood__01614.tif,ood__02329.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.3201299617410647,0.038550399243831635
+2237,2643,O,O,ood__01616.tif,ood__02461.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.15003957804299964,0.08519262820482254
+2239,2980,O,O,ood__01618.tif,ood__03248.tif,4,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9093691658158403,0.0115205068141222
+2240,2325,O,O,ood__01621.tif,ood__01793.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.45718876706843414,0.04182649403810501
+2251,2325,O,O,ood__01638.tif,ood__01793.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.6066879935047432,0.03225839510560036
+2258,2378,O,O,ood__01651.tif,ood__01882.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.26117750628207775,0.0674547404050827
+2293,2304,O,O,ood__01722.tif,ood__01743.tif,0,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9987570313462931,0.00030619301833212376
+2307,3891,O,O,ood__01747.tif,ood__documentcloud_00568.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.36477846076628007,0.11535967141389847
+2315,2953,O,O,ood__01764.tif,ood__03003.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.1913803779066472,0.09079158306121826
+2315,3339,O,O,ood__01764.tif,ood__documentcloud_00011.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.23468836133267265,0.08046378195285797
+2325,2589,O,O,ood__01793.tif,ood__02329.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.26852773726179596,0.04272119700908661
+2328,2517,O,O,ood__01797.tif,ood__02152.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.8117981099191663,0.017537854611873627
+2334,3092,O,O,ood__01809.tif,ood__03443.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.7524495894489102,0.03258385509252548
+2349,2817,O,O,ood__01831.tif,ood__02760.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.4010125320366534,0.06420934200286865
+2354,2938,O,O,ood__01840.tif,ood__02970.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.2592414466846468,0.04096924886107445
+2364,3201,O,O,ood__01850.tif,ood__5b5477f3-3941-4dce-a7af-e7ab1538ecd5.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.37329719698262326,0.030678899958729744
+2375,4305,O,O,ood__01874.tif,websearch_9__pdf3_websearch_9_00002_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.11286259685585485,0.0767262727022171
+2396,3902,O,O,ood__01917.tif,ood__documentcloud_00579.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.10765136015675542,0.02922428958117962
+2412,2737,O,O,ood__01948.tif,ood__02615.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.3810026294289382,0.02162134274840355
+2422,2456,O,O,ood__01971.tif,ood__02030.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.24513266214294033,0.024192601442337036
+2422,4104,O,O,ood__01971.tif,ood__pdf2_documentcloud_00003_ood.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.18926131470647856,0.02303454838693142
+2435,3374,O,O,ood__01995.tif,ood__documentcloud_00051.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.14174041677702154,0.12548822164535522
+2445,2973,O,O,ood__02011.tif,ood__03234.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.46194337297898214,0.0532073937356472
+2456,3051,O,O,ood__02030.tif,ood__03373.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.3030748438553734,0.01869416981935501
+2456,3170,O,O,ood__02030.tif,ood__36737ffe-cc98-411f-9cba-5e82e1b2c309.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.28317877740041136,0.020316090434789658
+2456,3541,O,O,ood__02030.tif,ood__documentcloud_00218.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.4200274620167067,0.017821546643972397
+2456,3902,O,O,ood__02030.tif,ood__documentcloud_00579.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.06101737134810485,0.027983900159597397
+2456,3962,O,O,ood__02030.tif,ood__documentcloud_00640.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.3150034313014094,0.02375081181526184
+2456,4104,O,O,ood__02030.tif,ood__pdf2_documentcloud_00003_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.2723944565265768,0.017064891755580902
+2456,4129,O,O,ood__02030.tif,ood__pdf2_documentcloud_00218_ood.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.2496056908052908,0.017598647624254227
+2462,3521,O,O,ood__02043.tif,ood__documentcloud_00198.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.2189931872850904,0.06554152071475983
+2470,3023,O,O,ood__02054.tif,ood__03321.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.6975009673509648,0.020916208624839783
+2477,4156,O,O,ood__02065.tif,ood__pdf2_documentcloud_00469_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.0907976818015462,0.07162390649318695
+2498,3397,O,O,ood__02104.tif,ood__documentcloud_00074.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.11939659228269377,0.07010257989168167
+2502,3825,O,O,ood__02115.tif,ood__documentcloud_00502.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.17860337410107466,0.07230667024850845
+2506,3440,O,O,ood__02123.tif,ood__documentcloud_00117.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.22087977217132831,0.09054577350616455
+2537,2616,O,O,ood__02195.tif,ood__02401.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.3961351178242435,0.08510897308588028
+2552,2599,O,O,ood__02230.tif,ood__02351.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9642088719472102,0.000735174398869276
+2552,2604,O,O,ood__02230.tif,ood__02369.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.49982315144907163,0.009119788184762001
+2552,2883,O,O,ood__02230.tif,ood__02886.tif,0,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9732100094014492,0.0006710874731652439
+2552,2934,O,O,ood__02230.tif,ood__02963.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.5153114649497282,0.008694158867001534
+2599,2604,O,O,ood__02351.tif,ood__02369.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.5103772036070375,0.008802644908428192
+2599,2883,O,O,ood__02351.tif,ood__02886.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9612021254536715,0.0007618025410920382
+2599,2934,O,O,ood__02351.tif,ood__02963.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.52592878439526,0.00837797299027443
+2604,2883,O,O,ood__02369.tif,ood__02886.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.5001361993157796,0.009148930199444294
+2604,2934,O,O,ood__02369.tif,ood__02963.tif,4,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9617179236526427,0.0008404301479458809
+2609,3075,O,O,ood__02383.tif,ood__03413.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.4028218815240777,0.05326968431472778
+2613,2845,O,O,ood__02390.tif,ood__02806.tif,0,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9873535006115332,0.000545067829079926
+2614,3915,O,O,ood__02394.tif,ood__documentcloud_00592.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.052352727678420675,0.033361874520778656
+2624,3335,O,O,ood__02425.tif,ood__documentcloud_00007.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.23998613841183147,0.1049392968416214
+2635,2854,O,O,ood__02448.tif,ood__02825.tif,2,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.8890546286121375,0.010670321062207222
+2638,4119,O,O,ood__02451.tif,ood__pdf2_documentcloud_00056_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.1283343290210125,0.049527689814567566
+2644,3516,O,O,ood__02469.tif,ood__documentcloud_00193.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.09522657520327976,0.06873156875371933
+2729,3296,O,O,ood__02605.tif,ood__b3b4a3ec-088e-4917-9212-46563c64b689.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.13373524641575296,0.08924955129623413
+2730,3106,O,O,ood__02606.tif,ood__03465.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.11206968573636139,0.07554183155298233
+2737,2926,O,O,ood__02615.tif,ood__02953.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.443457065068286,0.04277852177619934
+2798,3586,O,O,ood__02709.tif,ood__documentcloud_00263.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.06618980845230873,0.09728614240884781
+2817,4285,O,O,ood__02760.tif,ood__pdf2_documentcloud_00820_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.2064576875640139,0.06880594044923782
+2857,3205,O,O,ood__02832.tif,ood__605775a4-c015-4a35-9614-991f325781fc.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.8546789122582071,0.02707201987504959
+2881,3051,O,O,ood__02880.tif,ood__03373.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.5170355744337322,0.09640215337276459
+2883,2934,O,O,ood__02886.tif,ood__02963.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.5151446989236544,0.008724736049771309
+2902,4105,O,O,ood__02915.tif,ood__pdf2_documentcloud_00004_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.11265928497289988,0.10735754668712616
+2928,3081,O,O,ood__02955.tif,ood__03426.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.22726033146843577,0.028124282136559486
+2960,3067,O,O,ood__03013.tif,ood__03397.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.11568921133717272,0.07794062793254852
+2965,3826,O,O,ood__03225.tif,ood__documentcloud_00503.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.20634893078884986,0.043047793209552765
+2991,3102,O,O,ood__03271.tif,ood__03458.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.8659860978325598,0.02653299644589424
+2996,3090,O,O,ood__03278.tif,ood__03439.tif,0,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9962465391296531,0.0031813676469027996
+3032,4129,O,O,ood__03342.tif,ood__pdf2_documentcloud_00218_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.1684269099514513,0.015903066843748093
+3034,4269,O,O,ood__03347.tif,ood__pdf2_documentcloud_00802_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.2039714455948271,0.0866042822599411
+3051,3541,O,O,ood__03373.tif,ood__documentcloud_00218.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.3462365098010286,0.01828068494796753
+3051,3902,O,O,ood__03373.tif,ood__documentcloud_00579.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.1244437697343559,0.025570077821612358
+3051,3962,O,O,ood__03373.tif,ood__documentcloud_00640.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.4097488908051074,0.01948152296245098
+3051,4129,O,O,ood__03373.tif,ood__pdf2_documentcloud_00218_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.2906759697029368,0.015927182510495186
+3130,4294,O,O,ood__0a3aa5ac-9747-48e9-ae62-e53fec4e2962.tif,ood__pdf2_documentcloud_00831_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.23728041031195465,0.07314734160900116
+3145,3718,O,O,ood__19837024-cee9-4110-a9bf-0243456bb144.tif,ood__documentcloud_00395.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.12332784587521887,0.08711020648479462
+3170,3962,O,O,ood__36737ffe-cc98-411f-9cba-5e82e1b2c309.tif,ood__documentcloud_00640.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.17849737871373894,0.027065740898251534
+3170,4104,O,O,ood__36737ffe-cc98-411f-9cba-5e82e1b2c309.tif,ood__pdf2_documentcloud_00003_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.15508228402964971,0.01947147026658058
+3172,3521,O,O,ood__393d1a35-1af2-4469-8aba-9f9469d424bb.tif,ood__documentcloud_00198.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.26084581762520065,0.08738940954208374
+3200,4294,O,O,ood__5a3f3cd4-f4c9-48a5-8ea1-313f53f7238d.tif,ood__pdf2_documentcloud_00831_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.17472527552819006,0.10280174762010574
+3204,3309,O,O,ood__5e8cce44-b812-4fb3-94ca-60a3fb5bb7e9.tif,ood__c1cd7385-0843-43ab-bce3-09b8acfec13f.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,0.9999999999999998,0.0
+3216,3446,O,O,ood__6cceaf0a-1dac-441c-b56a-e691cb9ed823.tif,ood__documentcloud_00123.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.25685469034985803,0.06847761571407318
+3236,3927,O,O,ood__7a7d8cc3-a905-4364-a0f0-983e76f8c94c.tif,ood__documentcloud_00604.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.15926712043574567,0.08440779149532318
+3243,4098,O,O,ood__808ae7b5-d98c-469a-adc7-ea1938613d48.tif,ood__fbdcb6f3-1c6e-4055-94c4-68e27ce571af.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+3277,3891,O,O,ood__a35fce28-88df-4051-8e26-54631771813d.tif,ood__documentcloud_00568.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.236189261076285,0.10203611850738525
+3283,3290,O,O,ood__a75110fb-7669-4d17-89df-dc635f07a1e0.tif,ood__ae5d9505-1d92-44fd-b09c-b2b720d3d014.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+3296,3861,O,O,ood__b3b4a3ec-088e-4917-9212-46563c64b689.tif,ood__documentcloud_00538.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.20524000400322634,0.07569412142038345
+3313,3393,O,O,ood__c8cc8b3e-696d-4c07-8850-c3f596b2082c.tif,ood__documentcloud_00070.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.2513383806651125,0.06526434421539307
+3335,3433,O,O,ood__documentcloud_00007.tif,ood__documentcloud_00110.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.03142347247379681,0.06972038745880127
+3335,4201,O,O,ood__documentcloud_00007.tif,ood__pdf2_documentcloud_00547_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.13586393228545324,0.0717722550034523
+3355,3471,O,O,ood__documentcloud_00027.tif,ood__documentcloud_00148.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.49575749108771244,0.050634704530239105
+3355,3527,O,O,ood__documentcloud_00027.tif,ood__documentcloud_00204.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.5419957997743133,0.0489811897277832
+3358,3448,O,O,ood__documentcloud_00030.tif,ood__documentcloud_00125.tif,0,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9959045336156611,0.0006299187080003321
+3362,3710,O,O,ood__documentcloud_00034.tif,ood__documentcloud_00387.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.2388071574373065,0.10860936343669891
+3362,3782,O,O,ood__documentcloud_00034.tif,ood__documentcloud_00459.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.16393913379690503,0.09782379865646362
+3412,3470,O,O,ood__documentcloud_00089.tif,ood__documentcloud_00147.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,0.9999999999999999,0.0
+3440,3871,O,O,ood__documentcloud_00117.tif,ood__documentcloud_00548.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.323256739333587,0.1081438809633255
+3457,3488,O,O,ood__documentcloud_00134.tif,ood__documentcloud_00165.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+3459,3489,O,O,ood__documentcloud_00136.tif,ood__documentcloud_00166.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+3495,3496,O,O,ood__documentcloud_00172.tif,ood__documentcloud_00173.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.9070271596061593,0.010110173374414444
+3513,3541,O,O,ood__documentcloud_00190.tif,ood__documentcloud_00218.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.6139244795065387,0.013908176682889462
+3513,3962,O,O,ood__documentcloud_00190.tif,ood__documentcloud_00640.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.41317319458215046,0.021235745400190353
+3513,4129,O,O,ood__documentcloud_00190.tif,ood__pdf2_documentcloud_00218_ood.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.38492313734577743,0.0161129217594862
+3521,3595,O,O,ood__documentcloud_00198.tif,ood__documentcloud_00272.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.2572043249841082,0.07571236789226532
+3533,4287,O,O,ood__documentcloud_00210.tif,ood__pdf2_documentcloud_00822_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.16395829702605774,0.07950720191001892
+3541,3902,O,O,ood__documentcloud_00218.tif,ood__documentcloud_00579.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.13172206520916305,0.028333354741334915
+3541,4104,O,O,ood__documentcloud_00218.tif,ood__pdf2_documentcloud_00003_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.16597798463937063,0.02022435888648033
+3541,4129,O,O,ood__documentcloud_00218.tif,ood__pdf2_documentcloud_00218_ood.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.40961053845126666,0.015655336901545525
+3554,3959,O,O,ood__documentcloud_00231.tif,ood__documentcloud_00637.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,0.9999999999999999,0.0
+3570,3608,O,O,ood__documentcloud_00247.tif,ood__documentcloud_00285.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.32761932599481525,0.021036183461546898
+3630,3891,O,O,ood__documentcloud_00307.tif,ood__documentcloud_00568.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.09976112962145132,0.11207395046949387
+3634,4045,O,O,ood__documentcloud_00311.tif,ood__documentcloud_00723.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.03858939212069775,0.10425055027008057
+3644,3645,O,O,ood__documentcloud_00321.tif,ood__documentcloud_00322.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,0.9999999999999999,0.0
+3669,3894,O,O,ood__documentcloud_00346.tif,ood__documentcloud_00571.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,0.9999999999999999,0.0
+3718,4307,O,O,ood__documentcloud_00395.tif,websearch_9__pdf3_websearch_9_00004_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.24529429781417444,0.0701150894165039
+3740,4257,O,O,ood__documentcloud_00417.tif,ood__pdf2_documentcloud_00611_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.6755195248166481,0.019976865500211716
+3752,3976,O,O,ood__documentcloud_00429.tif,ood__documentcloud_00654.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.5452510796497259,0.029889510944485664
+3766,3925,O,O,ood__documentcloud_00443.tif,ood__documentcloud_00602.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.166907382671728,0.08177860826253891
+3803,4237,O,O,ood__documentcloud_00480.tif,ood__pdf2_documentcloud_00588_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+3841,3865,O,O,ood__documentcloud_00518.tif,ood__documentcloud_00542.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.3048373225140883,0.08346754312515259
+3871,4269,O,O,ood__documentcloud_00548.tif,ood__pdf2_documentcloud_00802_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.27906270591719723,0.10449619591236115
+3885,4297,O,O,ood__documentcloud_00562.tif,ood__pdf2_documentcloud_00836_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+3887,4011,O,O,ood__documentcloud_00564.tif,ood__documentcloud_00689.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+3902,3962,O,O,ood__documentcloud_00579.tif,ood__documentcloud_00640.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.16454971515343125,0.03046838939189911
+3902,4129,O,O,ood__documentcloud_00579.tif,ood__pdf2_documentcloud_00218_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.033608410149289815,0.025851557031273842
+3922,4007,O,O,ood__documentcloud_00599.tif,ood__documentcloud_00685.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.17092632643488878,0.09283602237701416
+3985,4161,O,O,ood__documentcloud_00663.tif,ood__pdf2_documentcloud_00505_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+3986,4170,O,O,ood__documentcloud_00664.tif,ood__pdf2_documentcloud_00514_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,0.9999999999999999,0.0
+3987,4169,O,O,ood__documentcloud_00665.tif,ood__pdf2_documentcloud_00513_ood.tif,6,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.4412640166514354,0.034132473170757294
+3988,4174,O,O,ood__documentcloud_00666.tif,ood__pdf2_documentcloud_00519_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4061,4062,O,O,ood__documentcloud_00739.tif,ood__documentcloud_00740.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4065,4271,O,O,ood__documentcloud_00743.tif,ood__pdf2_documentcloud_00805_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,0.9999999999999999,0.0
+4067,4273,O,O,ood__documentcloud_00745.tif,ood__pdf2_documentcloud_00807_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4081,4287,O,O,ood__ed55df7e-1743-4a24-93a4-61a511c3c42b.tif,ood__pdf2_documentcloud_00822_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.25269046249252236,0.07151088118553162
+4104,4129,O,O,ood__pdf2_documentcloud_00003_ood.tif,ood__pdf2_documentcloud_00218_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.172775832118348,0.015963684767484665
+4130,4138,O,O,ood__pdf2_documentcloud_00235_ood.tif,ood__pdf2_documentcloud_00266_ood.tif,2,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.5647551321758886,0.06520475447177887
+4169,4185,O,O,ood__pdf2_documentcloud_00513_ood.tif,ood__pdf2_documentcloud_00531_ood.tif,8,not_confirmed,pHash candidate only; not used as a duplicate group,False,False,0.4307039102876021,0.03050764463841915
+4238,4239,O,O,ood__pdf2_documentcloud_00589_ood.tif,ood__pdf2_documentcloud_00591_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4238,4240,O,O,ood__pdf2_documentcloud_00589_ood.tif,ood__pdf2_documentcloud_00593_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4238,4241,O,O,ood__pdf2_documentcloud_00589_ood.tif,ood__pdf2_documentcloud_00594_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4238,4242,O,O,ood__pdf2_documentcloud_00589_ood.tif,ood__pdf2_documentcloud_00595_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4238,4243,O,O,ood__pdf2_documentcloud_00589_ood.tif,ood__pdf2_documentcloud_00596_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4238,4244,O,O,ood__pdf2_documentcloud_00589_ood.tif,ood__pdf2_documentcloud_00597_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4238,4245,O,O,ood__pdf2_documentcloud_00589_ood.tif,ood__pdf2_documentcloud_00598_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4238,4246,O,O,ood__pdf2_documentcloud_00589_ood.tif,ood__pdf2_documentcloud_00599_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4238,4247,O,O,ood__pdf2_documentcloud_00589_ood.tif,ood__pdf2_documentcloud_00600_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4238,4248,O,O,ood__pdf2_documentcloud_00589_ood.tif,ood__pdf2_documentcloud_00601_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4238,4249,O,O,ood__pdf2_documentcloud_00589_ood.tif,ood__pdf2_documentcloud_00602_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4239,4240,O,O,ood__pdf2_documentcloud_00591_ood.tif,ood__pdf2_documentcloud_00593_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4239,4241,O,O,ood__pdf2_documentcloud_00591_ood.tif,ood__pdf2_documentcloud_00594_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4239,4242,O,O,ood__pdf2_documentcloud_00591_ood.tif,ood__pdf2_documentcloud_00595_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4239,4243,O,O,ood__pdf2_documentcloud_00591_ood.tif,ood__pdf2_documentcloud_00596_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4239,4244,O,O,ood__pdf2_documentcloud_00591_ood.tif,ood__pdf2_documentcloud_00597_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4239,4245,O,O,ood__pdf2_documentcloud_00591_ood.tif,ood__pdf2_documentcloud_00598_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4239,4246,O,O,ood__pdf2_documentcloud_00591_ood.tif,ood__pdf2_documentcloud_00599_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4239,4247,O,O,ood__pdf2_documentcloud_00591_ood.tif,ood__pdf2_documentcloud_00600_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4239,4248,O,O,ood__pdf2_documentcloud_00591_ood.tif,ood__pdf2_documentcloud_00601_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4239,4249,O,O,ood__pdf2_documentcloud_00591_ood.tif,ood__pdf2_documentcloud_00602_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4240,4241,O,O,ood__pdf2_documentcloud_00593_ood.tif,ood__pdf2_documentcloud_00594_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4240,4242,O,O,ood__pdf2_documentcloud_00593_ood.tif,ood__pdf2_documentcloud_00595_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4240,4243,O,O,ood__pdf2_documentcloud_00593_ood.tif,ood__pdf2_documentcloud_00596_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4240,4244,O,O,ood__pdf2_documentcloud_00593_ood.tif,ood__pdf2_documentcloud_00597_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4240,4245,O,O,ood__pdf2_documentcloud_00593_ood.tif,ood__pdf2_documentcloud_00598_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4240,4246,O,O,ood__pdf2_documentcloud_00593_ood.tif,ood__pdf2_documentcloud_00599_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4240,4247,O,O,ood__pdf2_documentcloud_00593_ood.tif,ood__pdf2_documentcloud_00600_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4240,4248,O,O,ood__pdf2_documentcloud_00593_ood.tif,ood__pdf2_documentcloud_00601_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4240,4249,O,O,ood__pdf2_documentcloud_00593_ood.tif,ood__pdf2_documentcloud_00602_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4241,4242,O,O,ood__pdf2_documentcloud_00594_ood.tif,ood__pdf2_documentcloud_00595_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4241,4243,O,O,ood__pdf2_documentcloud_00594_ood.tif,ood__pdf2_documentcloud_00596_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4241,4244,O,O,ood__pdf2_documentcloud_00594_ood.tif,ood__pdf2_documentcloud_00597_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4241,4245,O,O,ood__pdf2_documentcloud_00594_ood.tif,ood__pdf2_documentcloud_00598_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4241,4246,O,O,ood__pdf2_documentcloud_00594_ood.tif,ood__pdf2_documentcloud_00599_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4241,4247,O,O,ood__pdf2_documentcloud_00594_ood.tif,ood__pdf2_documentcloud_00600_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4241,4248,O,O,ood__pdf2_documentcloud_00594_ood.tif,ood__pdf2_documentcloud_00601_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4241,4249,O,O,ood__pdf2_documentcloud_00594_ood.tif,ood__pdf2_documentcloud_00602_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4242,4243,O,O,ood__pdf2_documentcloud_00595_ood.tif,ood__pdf2_documentcloud_00596_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4242,4244,O,O,ood__pdf2_documentcloud_00595_ood.tif,ood__pdf2_documentcloud_00597_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4242,4245,O,O,ood__pdf2_documentcloud_00595_ood.tif,ood__pdf2_documentcloud_00598_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4242,4246,O,O,ood__pdf2_documentcloud_00595_ood.tif,ood__pdf2_documentcloud_00599_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4242,4247,O,O,ood__pdf2_documentcloud_00595_ood.tif,ood__pdf2_documentcloud_00600_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4242,4248,O,O,ood__pdf2_documentcloud_00595_ood.tif,ood__pdf2_documentcloud_00601_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4242,4249,O,O,ood__pdf2_documentcloud_00595_ood.tif,ood__pdf2_documentcloud_00602_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4243,4244,O,O,ood__pdf2_documentcloud_00596_ood.tif,ood__pdf2_documentcloud_00597_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4243,4245,O,O,ood__pdf2_documentcloud_00596_ood.tif,ood__pdf2_documentcloud_00598_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4243,4246,O,O,ood__pdf2_documentcloud_00596_ood.tif,ood__pdf2_documentcloud_00599_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4243,4247,O,O,ood__pdf2_documentcloud_00596_ood.tif,ood__pdf2_documentcloud_00600_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4243,4248,O,O,ood__pdf2_documentcloud_00596_ood.tif,ood__pdf2_documentcloud_00601_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4243,4249,O,O,ood__pdf2_documentcloud_00596_ood.tif,ood__pdf2_documentcloud_00602_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4244,4245,O,O,ood__pdf2_documentcloud_00597_ood.tif,ood__pdf2_documentcloud_00598_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4244,4246,O,O,ood__pdf2_documentcloud_00597_ood.tif,ood__pdf2_documentcloud_00599_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4244,4247,O,O,ood__pdf2_documentcloud_00597_ood.tif,ood__pdf2_documentcloud_00600_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4244,4248,O,O,ood__pdf2_documentcloud_00597_ood.tif,ood__pdf2_documentcloud_00601_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4244,4249,O,O,ood__pdf2_documentcloud_00597_ood.tif,ood__pdf2_documentcloud_00602_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4245,4246,O,O,ood__pdf2_documentcloud_00598_ood.tif,ood__pdf2_documentcloud_00599_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4245,4247,O,O,ood__pdf2_documentcloud_00598_ood.tif,ood__pdf2_documentcloud_00600_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4245,4248,O,O,ood__pdf2_documentcloud_00598_ood.tif,ood__pdf2_documentcloud_00601_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4245,4249,O,O,ood__pdf2_documentcloud_00598_ood.tif,ood__pdf2_documentcloud_00602_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4246,4247,O,O,ood__pdf2_documentcloud_00599_ood.tif,ood__pdf2_documentcloud_00600_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4246,4248,O,O,ood__pdf2_documentcloud_00599_ood.tif,ood__pdf2_documentcloud_00601_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4246,4249,O,O,ood__pdf2_documentcloud_00599_ood.tif,ood__pdf2_documentcloud_00602_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4247,4248,O,O,ood__pdf2_documentcloud_00600_ood.tif,ood__pdf2_documentcloud_00601_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4247,4249,O,O,ood__pdf2_documentcloud_00600_ood.tif,ood__pdf2_documentcloud_00602_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0
+4248,4249,O,O,ood__pdf2_documentcloud_00601_ood.tif,ood__pdf2_documentcloud_00602_ood.tif,0,confirmed_exact,identical raw bytes or decoded grayscale pixels,True,True,1.0,0.0

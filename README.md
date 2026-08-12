@@ -19,7 +19,38 @@ Before any main experiment, the project must reproduce the published full-set Di
 
 Green: `|ΔAUROC| <= 0.01` and `|ΔFPR95| <= 0.02`.  
 Yellow: larger but explainable implementation differences within the frozen protocol bounds.  
-Red: `|ΔAUROC| > 0.03` or `|ΔFPR95| > 0.05`; stop and diagnose.
+Red: `|ΔAUROC| > 0.02` or `|ΔFPR95| > 0.04`; stop and diagnose.
+
+The current author Drive is incomplete: 2,915 of 3,415 O TIFFs remain. We recovered
+395 pages from author-hosted source PDFs using a calibrated first-page rendering path;
+105 images have no available source. The strict image rerun therefore covers 4,312 of
+4,417 N/O pages. A full-set sensitivity result uses the author-provided logits only for
+those final 105 rows and marks that provenance explicitly.
+
+## Current results
+
+The mandatory reproduction gate passed green. The independent 4,312-image rerun and
+the 4,417-row provenance-marked sensitivity analysis both reproduce the published MSP
+and Energy results within the frozen tolerance.
+
+| Scope | Signal | AUROC | FPR95 |
+|---|---|---:|---:|
+| Published target | MSP | 0.728 | 0.847 |
+| Published target | Energy | 0.753 | 0.843 |
+| 4,312-image rerun | MSP | 0.729 | 0.847 |
+| 4,312-image rerun | Energy | 0.753 | 0.844 |
+| 4,417-row sensitivity | MSP | 0.728 | 0.847 |
+| 4,417-row sensitivity | Energy | 0.753 | 0.844 |
+
+The duplicate-aware research split contains 30% development and 70% sealed test. The
+sealed-test scores have not been computed. On the development partition, the strongest
+single-signal AUROC is Mahalanobis with an 80k RVL reference bank (0.746); the lowest
+FPR95 is Mahalanobis with a 32k bank (0.816). For comparison, development Energy is
+0.728 AUROC / 0.861 FPR95. All tested signals reject about 0.9%--1.2% of the independent
+10k T guardrail at thresholds fixed for 99% RVL validation acceptance.
+
+These are model-selection results, not final claims. The combination Gate remains
+unimplemented and the sealed test remains untouched.
 
 ## Frozen scope
 
@@ -36,9 +67,8 @@ See [`docs/protocol.md`](docs/protocol.md) for the executable protocol.
 ## Local setup
 
 ```powershell
-.\.venv\Scripts\python.exe -m pip install -e .
+.\.venv\Scripts\python.exe -m pip install -e ".[dev]"
 .\.venv\Scripts\python.exe -m pytest
 ```
 
 Commands are intentionally data-path driven; source datasets remain outside Git.
-

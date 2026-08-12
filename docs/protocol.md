@@ -8,11 +8,20 @@ With the DiT classifier frozen, compare single output- and representation-level 
 
 1. Pin the public DiT checkpoint and processor revision to
    `23f8b03d130fb66bbc9a15df3c75d753e49240eb`.
-2. Use the official, unaugmented TIFF N/O release: 1,002 N and 3,415 O.
+2. Target the official, unaugmented release: 1,002 N and 3,415 O. The live author Drive
+   currently exposes only 2,915 O TIFFs. Recover the 395 available author-hosted source
+   PDFs with the frozen calibrated renderer, and record the remaining 105 unavailable pages.
 3. Run every image once in evaluation mode and cache logits, probabilities, predicted class, and the 768-dimensional classifier-input feature.
 4. Compute micro AUROC and FPR95 with N as the positive/in-domain class and a higher score meaning more normal.
 5. Compare MSP and Energy against the published targets in `configs/experiment.yaml`.
-6. Stop on a red result. A yellow result may proceed only after a concrete implementation difference is isolated with an A/B check and documented.
+6. Stop on a red result. Green is `|ΔAUROC| <= 0.01` and `|ΔFPR95| <= 0.02`;
+   red is `|ΔAUROC| > 0.02` or `|ΔFPR95| > 0.04`. A yellow result may proceed only
+   after a concrete implementation difference is isolated with an A/B check and documented.
+
+The primary rerun reports all 4,312 available/recovered images. A separate 4,417-row
+sensitivity report may fill only the unavailable 105 rows with the author's published
+per-image logits. It must never be described as an independent full-image rerun, and those
+105 rows cannot participate in representation-based experiments.
 
 No RVL-CDIP reference data is downloaded or processed before this gate passes.
 
@@ -26,6 +35,12 @@ The original full-set reproduction always retains all images. Duplicate handling
 4. Confirm pHash-only candidates before clustering; same-template/different-content pages are not automatic duplicates.
 5. Group confirmed duplicates and create an approximately 30/70 development/sealed-test split while preserving N category and collection-source proportions as closely as possible.
 
+An exact duplicate group carrying both N and O labels is an impossible target, not a
+Gate error. Such rows remain in the original-paper reproduction and in a reported
+sensitivity analysis, but are excluded from the primary research comparison before any
+signal is ranked. The exclusion rule is based only on identical pixels and labels, never
+on model scores.
+
 ## Stage 2 — single-signal study
 
 - Output signals: MSP, Energy confidence, maximum logit, negative predictive entropy, and top-2 logit margin.
@@ -35,6 +50,26 @@ The original full-set reproduction always retains all images. Duplicate handling
 - MSP and Energy are recomputed on exactly the same sealed test as every new signal.
 
 Primary metrics are micro AUROC and FPR95. The fixed operating threshold is selected on development/RVL validation data and then applied once to sealed N/O and the 10k T guardrail. Final comparisons use paired bootstrap confidence intervals.
+
+### Development checkpoint (2026-08-12)
+
+The reproduction gate passed green. Duplicate handling produced a 1,294-row
+development partition and a 3,018-row sealed partition. Fourteen development rows from
+one exact-pixel group carried contradictory N/O labels; the frozen primary rule excludes
+those rows, leaving 306 N and 974 O for development ranking. The sealed partition has not
+been scored.
+
+The development checkpoint found:
+
+- Energy baseline: AUROC 0.728, FPR95 0.861.
+- kNN, 80k bank: AUROC 0.743, FPR95 0.851.
+- Mahalanobis, 32k bank: AUROC 0.745, FPR95 0.816.
+- Mahalanobis, 80k bank: AUROC 0.746, FPR95 0.831.
+- T false-rejection rates at the RVL-validation threshold: 0.89%--1.20%.
+
+The 32k and 80k Mahalanobis variants trade FPR95 against AUROC. No variant is selected
+for sealed evaluation until the single-signal results are reviewed and the next protocol
+decision is frozen.
 
 ## Shortcut audit
 

@@ -84,3 +84,30 @@ def macro_auroc_by_predicted_class(
         raise ValueError("No predicted class contains both N and O samples")
     return float(np.mean(list(per_class.values()))), per_class
 
+
+def macro_auroc_released_code(
+    n_scores: np.ndarray,
+    o_scores: np.ndarray,
+    n_true_labels: np.ndarray,
+    o_predicted_labels: np.ndarray,
+) -> tuple[float, dict[str, float]]:
+    """Reproduce the released script: N true-label buckets versus O predicted buckets.
+
+    This differs from the paper text, which says both sides are grouped by predicted
+    class. Both definitions are retained so the discrepancy remains visible.
+    """
+
+    n_values = np.asarray(n_scores)
+    o_values = np.asarray(o_scores)
+    n_labels = np.asarray(n_true_labels).astype(str)
+    o_labels = np.asarray(o_predicted_labels).astype(str)
+    per_class: dict[str, float] = {}
+    for label in sorted(set(o_labels.tolist())):
+        n_mask = n_labels == label
+        o_mask = o_labels == label
+        if not n_mask.any() or not o_mask.any():
+            continue
+        per_class[label] = binary_ood_metrics(n_values[n_mask], o_values[o_mask]).auroc
+    if not per_class:
+        raise ValueError("No released-code class contains both N and O samples")
+    return float(np.mean(list(per_class.values()))), per_class

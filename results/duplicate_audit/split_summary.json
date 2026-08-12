@@ -1,0 +1,149 @@
+{
+  "groups": 4245,
+  "invariants": {
+    "confirmed_group_crosses_split": false,
+    "each_path_exactly_once": true,
+    "model_outputs_or_scores_used": false
+  },
+  "requested_development_fraction": 0.3,
+  "rows": 4312,
+  "seed": 20260812,
+  "split_counts": {
+    "development": {
+      "N": 308,
+      "O": 986
+    },
+    "sealed": {
+      "N": 694,
+      "O": 2324
+    }
+  },
+  "strata": [
+    {
+      "development": 18,
+      "development_fraction": 0.3103448275862069,
+      "sealed": 40,
+      "stratum": "N|class=budget|source=documentcloud",
+      "total": 58
+    },
+    {
+      "development": 9,
+      "development_fraction": 0.2727272727272727,
+      "sealed": 24,
+      "stratum": "N|class=email|source=documentcloud",
+      "total": 33
+    },
+    {
+      "development": 21,
+      "development_fraction": 0.3,
+      "sealed": 49,
+      "stratum": "N|class=form|source=documentcloud",
+      "total": 70
+    },
+    {
+      "development": 54,
+      "development_fraction": 0.3068181818181818,
+      "sealed": 122,
+      "stratum": "N|class=handwritten|source=documentcloud",
+      "total": 176
+    },
+    {
+      "development": 18,
+      "development_fraction": 0.3157894736842105,
+      "sealed": 39,
+      "stratum": "N|class=invoice|source=documentcloud",
+      "total": 57
+    },
+    {
+      "development": 47,
+      "development_fraction": 0.3092105263157895,
+      "sealed": 105,
+      "stratum": "N|class=letter|source=documentcloud",
+      "total": 152
+    },
+    {
+      "development": 10,
+      "development_fraction": 0.30303030303030304,
+      "sealed": 23,
+      "stratum": "N|class=memo|source=documentcloud",
+      "total": 33
+    },
+    {
+      "development": 4,
+      "development_fraction": 0.2857142857142857,
+      "sealed": 10,
+      "stratum": "N|class=memo|source=web_search",
+      "total": 14
+    },
+    {
+      "development": 24,
+      "development_fraction": 0.27906976744186046,
+      "sealed": 62,
+      "stratum": "N|class=news_article|source=documentcloud",
+      "total": 86
+    },
+    {
+      "development": 4,
+      "development_fraction": 0.3076923076923077,
+      "sealed": 9,
+      "stratum": "N|class=questionnaire|source=documentcloud",
+      "total": 13
+    },
+    {
+      "development": 9,
+      "development_fraction": 0.34615384615384615,
+      "sealed": 17,
+      "stratum": "N|class=questionnaire|source=web_search",
+      "total": 26
+    },
+    {
+      "development": 58,
+      "development_fraction": 0.31521739130434784,
+      "sealed": 126,
+      "stratum": "N|class=resume|source=documentcloud",
+      "total": 184
+    },
+    {
+      "development": 4,
+      "development_fraction": 0.3333333333333333,
+      "sealed": 8,
+      "stratum": "N|class=scientific_publication|source=documentcloud",
+      "total": 12
+    },
+    {
+      "development": 8,
+      "development_fraction": 0.2962962962962963,
+      "sealed": 19,
+      "stratum": "N|class=scientific_publication|source=web_search",
+      "total": 27
+    },
+    {
+      "development": 1,
+      "development_fraction": 0.3333333333333333,
+      "sealed": 2,
+      "stratum": "N|class=specification|source=documentcloud",
+      "total": 3
+    },
+    {
+      "development": 19,
+      "development_fraction": 0.3275862068965517,
+      "sealed": 39,
+      "stratum": "N|class=specification|source=web_search",
+      "total": 58
+    },
+    {
+      "development": 417,
+      "development_fraction": 0.3017366136034732,
+      "sealed": 965,
+      "stratum": "O|source=documentcloud",
+      "total": 1382
+    },
+    {
+      "development": 569,
+      "development_fraction": 0.29512448132780084,
+      "sealed": 1359,
+      "stratum": "O|source=web_search",
+      "total": 1928
+    }
+  ]
+}

@@ -7,6 +7,7 @@ from typing import Iterable
 import numpy as np
 import torch
 from PIL import Image
+from tqdm import tqdm
 from transformers import AutoImageProcessor, AutoModelForImageClassification
 
 MODEL_REVISION = "23f8b03d130fb66bbc9a15df3c75d753e49240eb"
@@ -40,6 +41,7 @@ class FrozenDiT:
         self.model.requires_grad_(False)
         self.model.to(self.device)
         self.compute_dtype = torch.float16 if dtype == "float16" and self.device.type == "cuda" else torch.float32
+        self._feature_path_validated = False
 
         if not hasattr(self.model, "beit") or not hasattr(self.model, "classifier"):
             raise TypeError(f"Expected a BEiT/DiT classifier, got {type(self.model).__name__}")
@@ -56,13 +58,17 @@ class FrozenDiT:
             base_output = self.model.beit(pixel_values=pixel_values, return_dict=True)
             features = base_output.pooler_output
             logits_from_features = self.model.classifier(features)
-            direct_logits = self.model(pixel_values=pixel_values, return_dict=True).logits
-        max_error = (direct_logits.float() - logits_from_features.float()).abs().max().item()
-        tolerance = 1e-5 if self.compute_dtype == torch.float32 else 1e-3
-        if max_error > tolerance:
-            raise RuntimeError(f"Classifier-input feature failed logit equivalence: max error {max_error}")
+            if not self._feature_path_validated:
+                direct_logits = self.model(pixel_values=pixel_values, return_dict=True).logits
+                max_error = (direct_logits.float() - logits_from_features.float()).abs().max().item()
+                tolerance = 1e-5 if self.compute_dtype == torch.float32 else 1e-3
+                if max_error > tolerance:
+                    raise RuntimeError(
+                        f"Classifier-input feature failed logit equivalence: max error {max_error}"
+                    )
+                self._feature_path_validated = True
         return BatchOutput(
-            logits=direct_logits.float().cpu().numpy(),
+            logits=logits_from_features.float().cpu().numpy(),
             features=features.float().cpu().numpy(),
         )
 
@@ -70,12 +76,16 @@ class FrozenDiT:
         path_list = [Path(p) for p in paths]
         logits_parts: list[np.ndarray] = []
         feature_parts: list[np.ndarray] = []
-        for start in range(0, len(path_list), batch_size):
+        for start in tqdm(range(0, len(path_list), batch_size), desc="Frozen DiT inference"):
             images: list[Image.Image] = []
             for path in path_list[start : start + batch_size]:
                 with Image.open(path) as image:
                     images.append(image.convert("RGB"))
-            output = self.infer_images(images)
+            try:
+                output = self.infer_images(images)
+            finally:
+                for image in images:
+                    image.close()
             logits_parts.append(output.logits)
             feature_parts.append(output.features)
         return BatchOutput(

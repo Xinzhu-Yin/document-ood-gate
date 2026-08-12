@@ -59,9 +59,17 @@ class ShrinkageMahalanobis:
         if self.means_ is None or self.precision_ is None:
             raise RuntimeError("fit must be called before normality")
         q = np.asarray(queries, dtype=np.float64)
+        mean_precision = self.means_ @ self.precision_
+        mean_quadratic = np.einsum("cd,cd->c", mean_precision, self.means_)
         outputs: list[np.ndarray] = []
         for start in range(0, len(q), batch_size):
-            delta = q[start : start + batch_size, None, :] - self.means_[None, :, :]
-            squared = np.einsum("bcd,de,bce->bc", delta, self.precision_, delta, optimize=True)
+            batch = q[start : start + batch_size]
+            batch_precision = batch @ self.precision_
+            batch_quadratic = np.einsum("bd,bd->b", batch_precision, batch)
+            squared = (
+                batch_quadratic[:, None]
+                - 2.0 * (batch_precision @ self.means_.T)
+                + mean_quadratic[None, :]
+            )
             outputs.append(-squared.min(axis=1))
         return np.concatenate(outputs)

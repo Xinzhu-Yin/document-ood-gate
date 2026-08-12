@@ -4,6 +4,7 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .ruff_cache/
+.test-temp-split/
 
 # Never commit source documents, model weights, caches, or credentials.
 data/raw/
@@ -22,3 +23,4 @@ models/
 results/runs/
 artifacts/
 logs/
+tmp/

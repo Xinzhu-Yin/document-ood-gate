@@ -127,4 +127,3 @@ data.
 - [Frozen DiT checkpoint](https://huggingface.co/microsoft/dit-base-finetuned-rvlcdip)
 - [NeurIPS 2022 N/O benchmark paper](https://proceedings.neurips.cc/paper_files/paper/2022/hash/4c0986bd04d747745beba3752bdf4d9d-Abstract-Datasets_and_Benchmarks.html)
 - [Author RVL-CDIP-OOD release](https://github.com/gxlarson/RVL-CDIP-OOD)
-

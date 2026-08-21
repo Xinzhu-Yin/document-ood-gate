@@ -40,4 +40,3 @@ sealed-test evaluation.
 Before any combination experiment or sealed scoring, create and approve a separate frozen
 protocol addendum that answers the five questions above. Until then, development artifacts
 may be reviewed but no new candidate may use sealed-set feedback.
-

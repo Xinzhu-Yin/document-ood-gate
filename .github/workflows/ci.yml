@@ -35,4 +35,3 @@ jobs:
 
       - name: Unit tests
         run: python -m pytest -q
-

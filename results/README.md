@@ -39,4 +39,3 @@ extracted features, model weights, and per-page sensitive previews are not commi
 
 All development artifacts precede the one-time sealed evaluation. No sealed metrics are
 present in this directory as of 2026-08-21.
-

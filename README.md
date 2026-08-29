@@ -1,99 +1,96 @@
-# Frozen DiT Document OOD Gate
+# Document OOD Gate for Frozen DiT
 
-Reproducible evaluation of post-hoc OOD signals for a frozen document classifier.
+A reproducible study of post-hoc out-of-distribution signals for a frozen document
+classifier. DiT is never retrained; the project asks which score best accepts supported
+documents while rejecting documents outside the classifier's 16 categories.
 
 ## Research question
 
-Which single signal can pass familiar documents (`T`) and novel-but-supported documents (`N`), while rejecting unsupported documents (`O`), more reliably than MSP and Energy—without retraining DiT?
+- `T`: familiar RVL-CDIP documents used only as a false-rejection guardrail.
+- `N`: shifted documents that still belong to one of the 16 supported categories.
+- `O`: documents outside those 16 categories.
 
-The primary study compares single signals. A learned combination Gate is deliberately out of scope until the single-signal results have been reviewed and a separate protocol has been frozen.
+The Gate should accept `T` and `N`, reject `O`, and remain independent of whether DiT later
+predicts the correct in-distribution class. This repository currently covers single scores and
+four fixed post-hoc additions; learned score fusion is not yet included.
 
-## Hard execution gate
+## Experiment at a glance
 
-Before any main experiment, the project must reproduce the published full-set DiT N–O baselines on all 1,002 N and 3,415 O documents:
+| Item | Frozen setting |
+|---|---|
+| Classifier | [`microsoft/dit-base-finetuned-rvlcdip`](https://huggingface.co/microsoft/dit-base-finetuned-rvlcdip), inference only |
+| Development N/O | 306 N + 974 O after duplicate-conflict exclusion |
+| Reference bank | Nested 8k/32k/80k RVL banks in the main panel; fixed 32k in the supplementary panel |
+| Threshold calibration | 8k independent RVL pages, fixed at 99% acceptance per score |
+| T guardrail | 10k balanced RVL test pages, report-only |
+| Metrics | AUROC ↑, FPR95 ↓, T false-rejection rate ↓ |
+| Unseen evaluation | 3,018-row sealed N/O test, not evaluated or used for model selection |
 
-| Metric | MSP | Energy |
+## Results
+
+The mandatory reproduction gate passed before development experiments began.
+
+| Scope | MSP AUROC / FPR95 | Energy AUROC / FPR95 |
 |---|---:|---:|
-| micro AUROC | 0.728 | 0.753 |
-| micro FPR95 | 0.847 | 0.843 |
+| Published target, 4,417 rows | 0.728 / 0.847 | 0.753 / 0.843 |
+| Independent image rerun, 4,312 rows | 0.729 / 0.847 | 0.753 / 0.844 |
+| Full sensitivity result, 4,417 rows | 0.728 / 0.847 | 0.753 / 0.844 |
 
-Green: `|ΔAUROC| <= 0.01` and `|ΔFPR95| <= 0.02`.  
-Yellow: larger but explainable implementation differences within the frozen protocol bounds.  
-Red: `|ΔAUROC| > 0.02` or `|ΔFPR95| > 0.04`; stop and diagnose.
+The full sensitivity result uses author-provided logits only for 105 source images that are no
+longer available; their provenance is recorded in the result file.
 
-The current author Drive is incomplete: 2,915 of 3,415 O TIFFs remain. We recovered
-395 pages from author-hosted source PDFs using a calibrated first-page rendering path;
-105 images have no available source. The strict image rerun therefore covers 4,312 of
-4,417 N/O pages. A full-set sensitivity result uses the author-provided logits only for
-those final 105 rows and marks that provenance explicitly.
+Selected development results:
 
-## Current results
-
-The mandatory reproduction gate passed green. The independent 4,312-image rerun and
-the 4,417-row provenance-marked sensitivity analysis both reproduce the published MSP
-and Energy results within the frozen tolerance.
-
-| Scope | Signal | AUROC | FPR95 |
-|---|---|---:|---:|
-| Published target | MSP | 0.728 | 0.847 |
-| Published target | Energy | 0.753 | 0.843 |
-| 4,312-image rerun | MSP | 0.729 | 0.847 |
-| 4,312-image rerun | Energy | 0.753 | 0.844 |
-| 4,417-row sensitivity | MSP | 0.728 | 0.847 |
-| 4,417-row sensitivity | Energy | 0.753 | 0.844 |
-
-The duplicate-aware research split contains 30% development and 70% sealed test. The
-sealed-test scores have not been computed. On the development partition, the strongest
-single-signal AUROC is Mahalanobis with an 80k RVL reference bank (0.746); the lowest
-FPR95 is Mahalanobis with a 32k bank (0.816). For comparison, development Energy is
-0.728 AUROC / 0.861 FPR95. All tested signals reject about 0.9%--1.2% of the independent
-10k T guardrail at thresholds fixed for 99% RVL validation acceptance.
-
-These are model-selection results, not final claims. The combination Gate remains
-unimplemented and the sealed test remains untouched.
-
-### Supplementary post-hoc panel (development only)
-
-Four frozen additions were run on the same 306 N / 974 O development rows. The run uses
-a physically isolated 1,294-row development cache, the same 32k RVL reference bank, the
-same 8k threshold set, and the report-only 10k T guardrail. The 3,018-row sealed test was
-not loaded, inferred, scored, or used for configuration.
-
-| Signal | AUROC | FPR95 | T false reject |
+| Signal | AUROC ↑ | FPR95 ↓ | T false reject ↓ |
 |---|---:|---:|---:|
-| Energy (existing comparator) | 0.7282 | 0.8614 | 1.13% |
-| Negative entropy (existing comparator) | 0.7148 | 0.8480 | 1.20% |
-| Mahalanobis 32k (existing comparator) | 0.7447 | 0.8162 | 0.89% |
-| GEN (gamma=0.1, M=16) | 0.7173 | 0.8624 | 1.06% |
+| Energy | 0.7282 | 0.8614 | 1.13% |
+| Mahalanobis 32k | 0.7447 | 0.8162 | 0.89% |
+| Mahalanobis 80k | **0.7460** | 0.8310 | 0.92% |
+| GEN | 0.7173 | 0.8624 | 1.06% |
 | Relative Mahalanobis 32k | 0.7328 | 0.8655 | 0.93% |
-| ViM 32k (DIM=512) | 0.7451 | 0.7988 | 1.00% |
+| ViM 32k | 0.7451 | **0.7988** | 1.00% |
 | ReAct p90 + Energy | 0.5436 | 0.8819 | 1.08% |
 
-The internal Energy/Mahalanobis reproduction gate passed exactly before the four additions
-ran. See the [readable result summary](results/supplementary_baselines/development_summary.md),
-[CSV table](results/supplementary_baselines/development_results.csv),
-[complete JSON record](results/supplementary_baselines/development_results.json), and
-[frozen supplementary protocol](docs/supplementary_baselines_protocol.md).
+These are development-set observations, not final claims. ViM has the lowest observed FPR95;
+its paired confidence interval versus Energy still crosses zero.
 
-## Frozen scope
+FPR95 uses the threshold that accepts 95% of N. T false rejection uses a different,
+score-specific threshold calibrated to accept 99% of the 8k RVL validation set.
 
-- Model: `microsoft/dit-base-finetuned-rvlcdip`, inference only.
-- Reproduction: full official N/O, no augmentation.
-- Duplicate audit: raw SHA256, normalized-pixel SHA256, perceptual hash candidates, manual confirmation before the research split.
-- Research split: approximately 30% development / 70% sealed test, grouped by confirmed duplicate cluster.
-- Primary signals: MSP, Energy, maximum logit, negative entropy, top-2 margin, feature norm, kNN similarity, and Mahalanobis distance.
-- Guardrail: 10,000 balanced RVL-CDIP test pages; never used for model selection.
-- No raw document image, model weight, PII, or secret is committed.
+## Repository map
 
-See [`docs/protocol.md`](docs/protocol.md) for the main executable protocol and
-[`docs/supplementary_baselines_protocol.md`](docs/supplementary_baselines_protocol.md) for
-the four-method addendum.
+| Path | Contents |
+|---|---|
+| [`results/README.md`](results/README.md) | Result index: reproduction, main study, and supplementary panel |
+| [`docs/protocol.md`](docs/protocol.md) | Main frozen protocol |
+| [`docs/supplementary_baselines_protocol.md`](docs/supplementary_baselines_protocol.md) | Four-method frozen addendum |
+| [`configs/`](configs/) | Machine-readable experiment settings |
+| [`src/document_ood_gate/`](src/document_ood_gate/) | Reproducible implementation |
+| [`tests/`](tests/) | Automated checks |
 
-## Local setup
+Start with the [main development summary](results/single_signals/development_summary.md) and
+the [supplementary result summary](results/supplementary_baselines/development_summary.md).
+
+## Current boundary
+
+- No metric has been computed on the sealed partition, and it has not been used for method
+  selection or configuration.
+- Learned combination Gates and Transformer layer scans have not been run.
+- Raw documents, extracted features, model weights, credentials, and personal data are excluded
+  from Git.
+
+## Primary sources
+
+- [RVL-CDIP dataset paper](https://adamharley.com/icdar15/harley_convnet_icdar15.pdf)
+- [DiT paper and code](https://github.com/microsoft/unilm/tree/master/dit)
+- [N/O benchmark paper](https://proceedings.neurips.cc/paper_files/paper/2022/hash/4c0986bd04d747745beba3752bdf4d9d-Abstract-Datasets_and_Benchmarks.html)
+- [Author N/O data release](https://github.com/gxlarson/RVL-CDIP-OOD)
+
+## Local verification
 
 ```powershell
 .\.venv\Scripts\python.exe -m pip install -e ".[dev]"
 .\.venv\Scripts\python.exe -m pytest
 ```
 
-Commands are intentionally data-path driven; source datasets remain outside Git.
+All experiment commands are data-path driven; the source datasets remain outside the repository.

@@ -1,0 +1,18 @@
+{
+  "class_balanced": true,
+  "counts_by_purpose": {
+    "reference": 80000,
+    "t_guardrail": 10000,
+    "validation_threshold": 8000
+  },
+  "reference_banks_nested": true,
+  "reference_sizes": [
+    8000,
+    32000,
+    80000
+  ],
+  "seed": 20260812,
+  "test_guardrail_size": 10000,
+  "total_selected": 98000,
+  "validation_size": 8000
+}

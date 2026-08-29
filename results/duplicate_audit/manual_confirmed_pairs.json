@@ -1,0 +1,24 @@
+{
+  "review_date": "2026-08-12",
+  "method": "Side-by-side visual review of all non-exact candidates with 256px grayscale correlation >= 0.98; only the same page with minor raster/rendering differences was confirmed.",
+  "confirmed_pairs": [
+    {"left_index": 809, "right_index": 826, "left_file": "idood__pdf3_documentcloud_00100_handwritten.tif", "right_file": "idood__pdf3_documentcloud_00117_handwritten.tif"},
+    {"left_index": 1320, "right_index": 3700, "left_file": "ood__documentcloud_01067.tif", "right_file": "ood__documentcloud_00377.tif"},
+    {"left_index": 1317, "right_index": 3699, "left_file": "ood__documentcloud_01064.tif", "right_file": "ood__documentcloud_00376.tif"},
+    {"left_index": 1326, "right_index": 3705, "left_file": "ood__documentcloud_01073.tif", "right_file": "ood__documentcloud_00382.tif"},
+    {"left_index": 1316, "right_index": 3698, "left_file": "ood__documentcloud_01063.tif", "right_file": "ood__documentcloud_00375.tif"},
+    {"left_index": 1117, "right_index": 1406, "left_file": "ood__documentcloud_00864.tif", "right_file": "documentcloud_4_ood__pdf3_documentcloud_00058_ood.tif"},
+    {"left_index": 1328, "right_index": 3708, "left_file": "ood__documentcloud_01075.tif", "right_file": "ood__documentcloud_00385.tif"},
+    {"left_index": 1314, "right_index": 3695, "left_file": "ood__documentcloud_01061.tif", "right_file": "ood__documentcloud_00372.tif"},
+    {"left_index": 1039, "right_index": 3985, "left_file": "ood__documentcloud_00786.tif", "right_file": "ood__documentcloud_00663.tif"},
+    {"left_index": 1039, "right_index": 4161, "left_file": "ood__documentcloud_00786.tif", "right_file": "ood__pdf2_documentcloud_00505_ood.tif"},
+    {"left_index": 1325, "right_index": 3706, "left_file": "ood__documentcloud_01072.tif", "right_file": "ood__documentcloud_00383.tif"},
+    {"left_index": 1322, "right_index": 3701, "left_file": "ood__documentcloud_01069.tif", "right_file": "ood__documentcloud_00378.tif"},
+    {"left_index": 1220, "right_index": 4189, "left_file": "ood__documentcloud_00967.tif", "right_file": "ood__pdf2_documentcloud_00535_ood.tif"},
+    {"left_index": 1004, "right_index": 3786, "left_file": "ood__documentcloud_00751.tif", "right_file": "ood__documentcloud_00463.tif"},
+    {"left_index": 1112, "right_index": 1397, "left_file": "ood__documentcloud_00859.tif", "right_file": "documentcloud_4_ood__pdf3_documentcloud_00015_ood.tif"},
+    {"left_index": 1002, "right_index": 4289, "left_file": "ood__documentcloud_00749.tif", "right_file": "ood__pdf2_documentcloud_00824_ood.tif"},
+    {"left_index": 1115, "right_index": 1401, "left_file": "ood__documentcloud_00862.tif", "right_file": "documentcloud_4_ood__pdf3_documentcloud_00033_ood.tif"},
+    {"left_index": 1178, "right_index": 4259, "left_file": "ood__documentcloud_00925.tif", "right_file": "ood__pdf2_documentcloud_00614_ood.tif"}
+  ]
+}

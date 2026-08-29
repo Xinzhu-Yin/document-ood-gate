@@ -1,83 +1,49 @@
-# Document OOD Gate for Frozen DiT
+# Document OOD Gate for a Frozen DiT Classifier
 
-A reproducible study of post-hoc out-of-distribution signals for a frozen document
-classifier. DiT is never retrained; the project asks which score best accepts supported
-documents while rejecting documents outside the classifier's 16 categories.
+Can a lightweight gate accept supported documents and reject documents outside a
+classifier's 16 known categories—without retraining the classifier?
 
-## Research question
+This project freezes
+[`microsoft/dit-base-finetuned-rvlcdip`](https://huggingface.co/microsoft/dit-base-finetuned-rvlcdip)
+and compares post-hoc OOD scores.
 
-- `T`: familiar RVL-CDIP documents used only as a false-rejection guardrail.
-- `N`: shifted documents that still belong to one of the 16 supported categories.
-- `O`: documents outside those 16 categories.
+- **T** — familiar RVL-CDIP documents; used only to monitor false rejection.
+- **N** — shifted documents that still belong to one of the 16 supported classes; should pass.
+- **O** — documents outside all 16 supported classes; should be rejected.
 
-The Gate should accept `T` and `N`, reject `O`, and remain independent of whether DiT later
-predicts the correct in-distribution class. This repository currently covers single scores and
-four fixed post-hoc additions; learned score fusion is not yet included.
+## Current status
 
-## Experiment at a glance
+- Reproduced the published MSP and Energy N-vs-O baselines.
+- Audited duplicates and created a duplicate-group-aware 30% development / 70% sealed split.
+- Compared 12 single signals and four fixed supplementary methods on development data.
+- Kept the 3,018-image sealed test untouched; no final test claim has been made.
 
-| Item | Frozen setting |
-|---|---|
-| Classifier | [`microsoft/dit-base-finetuned-rvlcdip`](https://huggingface.co/microsoft/dit-base-finetuned-rvlcdip), inference only |
-| Development N/O | 306 N + 974 O after duplicate-conflict exclusion |
-| Reference bank | Nested 8k/32k/80k RVL banks in the main panel; fixed 32k in the supplementary panel |
-| Threshold calibration | 8k independent RVL pages, fixed at 99% acceptance per score |
-| T guardrail | 10k balanced RVL test pages, report-only |
-| Metrics | AUROC ↑, FPR95 ↓, T false-rejection rate ↓ |
-| Unseen evaluation | 3,018-row sealed N/O test, not evaluated or used for model selection |
+## Headline results
 
-## Results
-
-The mandatory reproduction gate passed before development experiments began.
+Published-baseline reproduction:
 
 | Scope | MSP AUROC / FPR95 | Energy AUROC / FPR95 |
 |---|---:|---:|
-| Published target, 4,417 rows | 0.728 / 0.847 | 0.753 / 0.843 |
-| Independent image rerun, 4,312 rows | 0.729 / 0.847 | 0.753 / 0.844 |
-| Full sensitivity result, 4,417 rows | 0.728 / 0.847 | 0.753 / 0.844 |
+| Published, 4,417 rows | 0.7280 / 0.8470 | 0.7530 / 0.8430 |
+| Independent image rerun, 4,312 images | 0.7286 / 0.8465 | 0.7533 / 0.8444 |
 
-The full sensitivity result uses author-provided logits only for 105 source images that are no
-longer available; their provenance is recorded in the result file.
+Selected development results on 306 N + 974 O:
 
-Selected development results:
-
-| Signal | AUROC ↑ | FPR95 ↓ | T false reject ↓ |
+| Signal | AUROC ↑ | FPR95 ↓ | T false rejection ↓ |
 |---|---:|---:|---:|
 | Energy | 0.7282 | 0.8614 | 1.13% |
-| Mahalanobis 32k | 0.7447 | 0.8162 | 0.89% |
-| Mahalanobis 80k | **0.7460** | 0.8310 | 0.92% |
-| GEN | 0.7173 | 0.8624 | 1.06% |
-| Relative Mahalanobis 32k | 0.7328 | 0.8655 | 0.93% |
-| ViM 32k | 0.7451 | **0.7988** | 1.00% |
-| ReAct p90 + Energy | 0.5436 | 0.8819 | 1.08% |
+| Mahalanobis, 32k reference | 0.7447 | 0.8162 | 0.89% |
+| Mahalanobis, 80k reference | **0.7463** | 0.8306 | 0.92% |
+| ViM, 32k reference | 0.7451 | **0.7988** | 1.00% |
 
-These are development-set observations, not final claims. ViM has the lowest observed FPR95;
-its paired confidence interval versus Energy still crosses zero.
+The lowest observed FPR95 is still 0.7988: at the threshold that accepts 95% of development
+N, about 79.88% of O also passes. The current methods therefore show measurable ranking
+signal, but not yet a deployable Gate.
 
-FPR95 uses the threshold that accepts 95% of N. T false rejection uses a different,
-score-specific threshold calibrated to accept 99% of the 8k RVL validation set.
+## Read the project
 
-## Repository map
-
-| Path | Contents |
-|---|---|
-| [`results/README.md`](results/README.md) | Result index: reproduction, main study, and supplementary panel |
-| [`docs/protocol.md`](docs/protocol.md) | Main frozen protocol |
-| [`docs/supplementary_baselines_protocol.md`](docs/supplementary_baselines_protocol.md) | Four-method frozen addendum |
-| [`configs/`](configs/) | Machine-readable experiment settings |
-| [`src/document_ood_gate/`](src/document_ood_gate/) | Reproducible implementation |
-| [`tests/`](tests/) | Automated checks |
-
-Start with the [main development summary](results/single_signals/development_summary.md) and
-the [supplementary result summary](results/supplementary_baselines/development_summary.md).
-
-## Current boundary
-
-- No metric has been computed on the sealed partition, and it has not been used for method
-  selection or configuration.
-- Learned combination Gates and Transformer layer scans have not been run.
-- Raw documents, extracted features, model weights, credentials, and personal data are excluded
-  from Git.
+1. [Experimental design](EXPERIMENT_DESIGN.md)
+2. [Complete results](EXPERIMENT_RESULTS.md)
 
 ## Primary sources
 
@@ -86,11 +52,5 @@ the [supplementary result summary](results/supplementary_baselines/development_s
 - [N/O benchmark paper](https://proceedings.neurips.cc/paper_files/paper/2022/hash/4c0986bd04d747745beba3752bdf4d9d-Abstract-Datasets_and_Benchmarks.html)
 - [Author N/O data release](https://github.com/gxlarson/RVL-CDIP-OOD)
 
-## Local verification
-
-```powershell
-.\.venv\Scripts\python.exe -m pip install -e ".[dev]"
-.\.venv\Scripts\python.exe -m pytest
-```
-
-All experiment commands are data-path driven; the source datasets remain outside the repository.
+Raw documents, model weights, extracted features, and the reproducible implementation are kept
+in the local research archive rather than on this presentation-focused branch.

@@ -3,6 +3,8 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
+from transformers import AutoModelForImageClassification
+
 from .duplicates import (
     build_fingerprint_manifest,
     exact_duplicate_groups,
@@ -11,7 +13,7 @@ from .duplicates import (
 )
 from .io import find_images, load_feature_cache, save_feature_cache, write_json
 from .metadata import parse_official_image_metadata
-from .modeling import FrozenDiT
+from .modeling import MODEL_REVISION, FrozenDiT
 from .official_reference import hybrid_reproduction_report, load_official_output
 from .reproduction import reproduce_from_logits
 from .recovery import recover_first_pages
@@ -23,6 +25,11 @@ from .reference_data import (
 )
 from .single_signal import evaluate_development_single_signals
 from .splitting import create_research_split, read_manifest, write_assignments
+from .supplementary_evaluation import (
+    evaluate_supplementary_baselines,
+    supplementary_results_frame,
+    supplementary_summary_markdown,
+)
 
 
 def extract_command(args: argparse.Namespace) -> None:
@@ -55,6 +62,51 @@ def extract_command(args: argparse.Namespace) -> None:
                 strict=True,
             )
         ],
+    )
+
+
+def extract_development_ood_command(args: argparse.Namespace) -> None:
+    """Create a physically isolated development-only OOD feature cache."""
+
+    assignments = read_manifest(Path(args.split))
+    required = {"path", "subset", "split"}
+    missing = sorted(required - set(assignments.columns))
+    if missing:
+        raise SystemExit(f"Research split is missing: {', '.join(missing)}")
+    development = assignments.loc[assignments["split"] == "development"].copy()
+    if len(development) != args.expected:
+        raise SystemExit(
+            f"Development count gate failed: expected {args.expected}, found {len(development)}"
+        )
+    if set(development["subset"].astype(str)) != {"N", "O"}:
+        raise SystemExit("Development rows must contain exactly N and O")
+    paths = [Path(value) for value in development["path"]]
+    missing_files = [path for path in paths if not path.is_file()]
+    if missing_files:
+        raise SystemExit(f"Missing development image: {missing_files[0]}")
+
+    model = FrozenDiT(device=args.device, dtype=args.dtype)
+    output = model.infer_paths(paths, batch_size=args.batch_size)
+    true_labels = [
+        str(value) if subset == "N" else "ood"
+        for value, subset in zip(
+            development.get("n_class", [""] * len(development)),
+            development["subset"],
+            strict=True,
+        )
+    ]
+    save_feature_cache(
+        Path(args.output_features),
+        paths,
+        development["subset"].astype(str).tolist(),
+        output.logits,
+        output.features,
+        true_labels,
+    )
+    write_assignments(development, Path(args.output_split))
+    print(
+        f"Cached {len(development)} development-only N/O rows; "
+        "sealed image pixels, logits, and features were not opened"
     )
 
 
@@ -272,6 +324,61 @@ def evaluate_reference_signals_command(args: argparse.Namespace) -> None:
         )
 
 
+def supplementary_baselines_command(args: argparse.Namespace) -> None:
+    assignments = read_manifest(Path(args.split))
+    if "split" not in assignments or set(assignments["split"].astype(str)) != {"development"}:
+        raise SystemExit(
+            "Supplementary evaluation requires a physically isolated development-only "
+            "split manifest; refusing to open the OOD feature cache"
+        )
+    ood_cache = load_feature_cache(Path(args.ood_features))
+    model = AutoModelForImageClassification.from_pretrained(
+        args.model_id,
+        revision=args.model_revision,
+    )
+    if not hasattr(model, "classifier"):
+        raise SystemExit(f"Expected a classifier head, got {type(model).__name__}")
+    weight = model.classifier.weight.detach().cpu().numpy()
+    bias = model.classifier.bias.detach().cpu().numpy()
+    result = evaluate_supplementary_baselines(
+        ood_cache,
+        assignments,
+        load_feature_cache(Path(args.reference_features)),
+        load_feature_cache(Path(args.validation_features)),
+        load_feature_cache(Path(args.t_features)),
+        read_manifest(Path(args.manifest)),
+        weight,
+        bias,
+        reference_size=args.reference_size,
+        gen_gamma=args.gen_gamma,
+        gen_top_m=args.gen_top_m,
+        react_percentile=args.react_percentile,
+        vim_principal_dim=args.vim_principal_dim,
+        target_n_tpr=args.target_n_acceptance,
+        target_validation_acceptance=args.target_validation_acceptance,
+        bootstrap_iterations=args.bootstrap_iterations,
+        seed=args.seed,
+    )
+    write_json(Path(args.output), result)
+    summary_path = Path(args.summary)
+    summary_path.parent.mkdir(parents=True, exist_ok=True)
+    summary_path.write_text(supplementary_summary_markdown(result), encoding="utf-8")
+    table_path = Path(args.table)
+    table_path.parent.mkdir(parents=True, exist_ok=True)
+    supplementary_results_frame(result).to_csv(table_path, index=False)
+    print(
+        "Supplementary development-only baseline panel: "
+        f"status={result['status']}; sealed metrics were not computed"
+    )
+    for name, metrics in result.get("supplementary_signals", {}).items():
+        print(
+            f"{name}: AUROC={metrics['auroc']:.6f}, FPR95={metrics['fpr95']:.6f}, "
+            f"T false reject={metrics['t_false_rejection_rate']:.6f}"
+        )
+    if result["status"] != "completed":
+        raise SystemExit("Internal baseline reproduction gate failed; supplementary run stopped")
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="doc-ood")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -291,6 +398,21 @@ def build_parser() -> argparse.ArgumentParser:
     extract.add_argument("--device", default="auto")
     extract.add_argument("--dtype", choices=["float16", "float32"], default="float32")
     extract.set_defaults(func=extract_command)
+
+    extract_development = sub.add_parser(
+        "extract-development-ood",
+        help="extract frozen DiT features only for rows assigned to development",
+    )
+    extract_development.add_argument("--split", required=True)
+    extract_development.add_argument("--output-features", required=True)
+    extract_development.add_argument("--output-split", required=True)
+    extract_development.add_argument("--expected", type=int, default=1294)
+    extract_development.add_argument("--batch-size", type=int, default=16)
+    extract_development.add_argument("--device", default="auto")
+    extract_development.add_argument(
+        "--dtype", choices=["float16", "float32"], default="float32"
+    )
+    extract_development.set_defaults(func=extract_development_ood_command)
 
     reproduce = sub.add_parser("reproduce", help="evaluate published MSP/Energy baselines")
     reproduce.add_argument("--features", required=True)
@@ -431,6 +553,32 @@ def build_parser() -> argparse.ArgumentParser:
     evaluate_reference.add_argument("--seed", type=int, default=20260812)
     evaluate_reference.add_argument("--device", default="auto")
     evaluate_reference.set_defaults(func=evaluate_reference_signals_command)
+
+    supplementary = sub.add_parser(
+        "evaluate-supplementary-baselines",
+        help="evaluate GEN, RMD, ViM, and ReAct+Energy without opening the sealed split",
+    )
+    supplementary.add_argument("--ood-features", required=True)
+    supplementary.add_argument("--split", required=True)
+    supplementary.add_argument("--manifest", required=True)
+    supplementary.add_argument("--reference-features", required=True)
+    supplementary.add_argument("--validation-features", required=True)
+    supplementary.add_argument("--t-features", required=True)
+    supplementary.add_argument("--output", required=True)
+    supplementary.add_argument("--summary", required=True)
+    supplementary.add_argument("--table", required=True)
+    supplementary.add_argument("--model-id", default="microsoft/dit-base-finetuned-rvlcdip")
+    supplementary.add_argument("--model-revision", default=MODEL_REVISION)
+    supplementary.add_argument("--reference-size", type=int, default=32000)
+    supplementary.add_argument("--gen-gamma", type=float, default=0.1)
+    supplementary.add_argument("--gen-top-m", type=int, default=100)
+    supplementary.add_argument("--react-percentile", type=float, default=90.0)
+    supplementary.add_argument("--vim-principal-dim", type=int, default=512)
+    supplementary.add_argument("--target-n-acceptance", type=float, default=0.95)
+    supplementary.add_argument("--target-validation-acceptance", type=float, default=0.99)
+    supplementary.add_argument("--bootstrap-iterations", type=int, default=2000)
+    supplementary.add_argument("--seed", type=int, default=20260812)
+    supplementary.set_defaults(func=supplementary_baselines_command)
 
     return parser
 

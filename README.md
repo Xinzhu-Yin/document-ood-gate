@@ -52,6 +52,29 @@ FPR95 is Mahalanobis with a 32k bank (0.816). For comparison, development Energy
 These are model-selection results, not final claims. The combination Gate remains
 unimplemented and the sealed test remains untouched.
 
+### Supplementary post-hoc panel (development only)
+
+Four frozen additions were run on the same 306 N / 974 O development rows. The run uses
+a physically isolated 1,294-row development cache, the same 32k RVL reference bank, the
+same 8k threshold set, and the report-only 10k T guardrail. The 3,018-row sealed test was
+not loaded, inferred, scored, or used for configuration.
+
+| Signal | AUROC | FPR95 | T false reject |
+|---|---:|---:|---:|
+| Energy (existing comparator) | 0.7282 | 0.8614 | 1.13% |
+| Negative entropy (existing comparator) | 0.7148 | 0.8480 | 1.20% |
+| Mahalanobis 32k (existing comparator) | 0.7447 | 0.8162 | 0.89% |
+| GEN (gamma=0.1, M=16) | 0.7173 | 0.8624 | 1.06% |
+| Relative Mahalanobis 32k | 0.7328 | 0.8655 | 0.93% |
+| ViM 32k (DIM=512) | 0.7451 | 0.7988 | 1.00% |
+| ReAct p90 + Energy | 0.5436 | 0.8819 | 1.08% |
+
+The internal Energy/Mahalanobis reproduction gate passed exactly before the four additions
+ran. See the [readable result summary](results/supplementary_baselines/development_summary.md),
+[CSV table](results/supplementary_baselines/development_results.csv),
+[complete JSON record](results/supplementary_baselines/development_results.json), and
+[frozen supplementary protocol](docs/supplementary_baselines_protocol.md).
+
 ## Frozen scope
 
 - Model: `microsoft/dit-base-finetuned-rvlcdip`, inference only.
@@ -62,7 +85,9 @@ unimplemented and the sealed test remains untouched.
 - Guardrail: 10,000 balanced RVL-CDIP test pages; never used for model selection.
 - No raw document image, model weight, PII, or secret is committed.
 
-See [`docs/protocol.md`](docs/protocol.md) for the executable protocol.
+See [`docs/protocol.md`](docs/protocol.md) for the main executable protocol and
+[`docs/supplementary_baselines_protocol.md`](docs/supplementary_baselines_protocol.md) for
+the four-method addendum.
 
 ## Local setup
 

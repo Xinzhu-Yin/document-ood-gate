@@ -12,6 +12,8 @@ model weights, and extracted feature matrices are intentionally excluded from Gi
 | 3. Main single-signal panel | Compare output and representation scores | [`single_signals/development_summary.md`](single_signals/development_summary.md) | [`single_signals/development_all_single_signals.json`](single_signals/development_all_single_signals.json) |
 | 4. Supplementary panel | Evaluate GEN, RMD, ViM, and ReAct | [`supplementary_baselines/development_summary.md`](supplementary_baselines/development_summary.md) | [`supplementary_baselines/development_results.csv`](supplementary_baselines/development_results.csv), [`development_results.json`](supplementary_baselines/development_results.json) |
 | 5. Representation layer scan | Compare final-layer readouts and full Layer 1–12 curves | [`layer_scan/development_summary.md`](layer_scan/development_summary.md) | [`layer_scan/full_results.csv`](layer_scan/full_results.csv), [`layer_scan/full_results.json`](layer_scan/full_results.json), [`layer_scan/vim_decomposition.csv`](layer_scan/vim_decomposition.csv) |
+| 6. Final development ablations | Isolate LayerNorm and diagnose fixed Residual dimensions | [`final_ablation/development_summary.md`](final_ablation/development_summary.md) | [`final_ablation/development_normalization_results.csv`](final_ablation/development_normalization_results.csv), [`final_ablation/development_residual_d_sensitivity.csv`](final_ablation/development_residual_d_sensitivity.csv) |
+| 7. One-time sealed replication | Evaluate the frozen D1+D2 panel and P1–P5 | [`sealed_test/final_summary.md`](sealed_test/final_summary.md) | [`sealed_test/complete_results.csv`](sealed_test/complete_results.csv), [`sealed_test/replication_predictions_evaluation.json`](sealed_test/replication_predictions_evaluation.json), [`sealed_test/run_metadata.json`](sealed_test/run_metadata.json) |
 
 ## 1. Reproduction gate
 
@@ -87,6 +89,43 @@ argmax. Any layer-specific pattern is a development observation; not confirmed o
 S1/S2 use reference-mean PCA Residual, while S1b uses the existing classifier-origin ViM
 Residual. See the linked summary for all confidence intervals and plots.
 
+## 6. Final development ablations
+
+The final development round reused cached 32k reference and 306 N + 974 O development features;
+sealed rows loaded/scored were 0/0. At Layer 12, Mahalanobis AUROC changed from 0.6567 on raw
+patch mean to 0.7447 after either LN-free or LN-pooler normalization. The existing `h_doc`
+pipeline was reproduced to maximum feature error 0 and maximum detector-result error
+`1.11e-16`. The fixed D=128/256/384/512 panel was diagnostic only; D=512 remained frozen for
+sealed evaluation.
+
+## 7. Final sealed replication
+
+Exactly 694 N + 2,324 O = 3,018 sealed images were opened once and received one frozen DiT
+forward pass each. The existing 32k reference cache was reused; reference images re-extracted:
+0. Forbidden sealed runs (8k sensitivity, CLS, D sensitivity, new methods): all 0.
+
+| Frozen sealed configuration | AUROC ↑ | FPR95 ↓ |
+|---|---:|---:|
+| MSP | 0.7372 | 0.8468 |
+| Energy | **0.7650** | 0.8369 |
+| `h_doc` Mahalanobis-32k | 0.7474 | 0.8546 |
+| `h_doc` kNN-32k (`k=10`) | 0.7405 | 0.8795 |
+| ViM-origin Residual-only | 0.7433 | 0.8808 |
+| ViM | 0.7473 | 0.8731 |
+
+P1–P5 were all supported. Energy had the highest AUROC in the complete frozen set. Layer 9
+LN-pooler Mahalanobis had the lowest FPR95 (0.8171) but AUROC 0.6607; therefore the highest-AUROC
+and lowest-FPR95 configurations were different. The complete 108-row sealed layer grid is in
+[`sealed_test/sealed_layer_grid.csv`](sealed_test/sealed_layer_grid.csv), and the full curves are
+reported rather than only an argmax.
+
+The immutable freeze commit `451fbdb4e902e75843e8e4ef5a31745cc95f1875` was created locally
+before sealed access and its timestamp predates the first image access. Protocol deviation: the
+commit could not be pushed to GitHub before access because local GitHub credentials were
+unavailable to the command-line environment; it was pushed only during final repository sync.
+No score was available when the implementation-only string-array serialization repair was made,
+and no experimental setting changed.
+
 ## Metric note
 
 FPR95 uses the threshold that accepts at least 95% of N. T false rejection uses a different,
@@ -95,7 +134,11 @@ columns are not measurements at the same threshold.
 
 ## Evaluation boundary
 
-The 3,018-row sealed test has not been read, inferred, scored, or used for method selection. All
-new-method results in this directory are development observations, not final test claims. The
-layer-scan run records sealed rows loaded/scored as 0/0 and does not re-score T for its new
-representations.
+The sealed test was used once for final replication only, after the local freeze commit. Its
+results were not used to add methods, select layers, tune D/k, change readouts, or redesign the
+development experiment. The final metadata records `post_sealed_experimental_iteration=false`.
+
+A full shortcut audit was not performed. The development/sealed split preserves source
+composition, reducing source-distribution mismatch across splits, but this does not rule out
+within-task acquisition, rendering, or source-related shortcuts. In particular, 395 recovered O
+pages are calibrated rerenders rather than byte-identical original TIFFs.

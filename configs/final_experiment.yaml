@@ -1,0 +1,27 @@
+study: final_ablation_and_single_sealed_replication
+model: microsoft/dit-base-finetuned-rvlcdip
+model_revision: 23f8b03d130fb66bbc9a15df3c75d753e49240eb
+reference_rows: 32000
+development_n: 306
+development_o: 974
+sealed_n: 694
+sealed_o: 2324
+feature_dim: 768
+layers: 12
+normalizations:
+  - raw_patch_mean
+  - ln_free
+  - ln_pooler
+methods:
+  - mahalanobis
+  - knn
+  - mean_centered_pca_residual
+k: 10
+primary_D: 512
+diagnostic_layers: [3, 7, 9, 11]
+diagnostic_D: [128, 256, 384, 512]
+bootstrap_iterations: 2000
+bootstrap_seed: 20260812
+cache_dtype: float32
+sealed_reference_reextract: false
+post_sealed_iteration: false

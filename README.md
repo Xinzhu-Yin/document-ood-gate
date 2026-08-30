@@ -137,11 +137,13 @@ AUROC across the frozen D1+D2 set, while Layer 9 LN-pooler Mahalanobis had the l
 prediction checks, and development-versus-sealed curves are in
 [`results/sealed_test/`](results/sealed_test/).
 
-The immutable freeze commit `451fbdb4e902e75843e8e4ef5a31745cc95f1875` was created locally
-before the first sealed image was accessed. Protocol deviation: command-line GitHub credentials
-were unavailable, so that commit was pushed only during final repository sync rather than before
-access. No scores existed when the implementation-only sealed-label serialization repair was
-made, and no experimental setting changed.
+The immutable local freeze commit `451fbdb4e902e75843e8e4ef5a31745cc95f1875` was created before
+the first sealed image was accessed. Protocol deviation: command-line GitHub credentials were
+unavailable, so it was not published before access. During final sync, its byte-identical tree
+(`7d12bfd0dd46c5055ec2428bf93094b6188bb157`) was published as remote commit
+`d0d058bdb7abd3ff719a0553aca58580823bb714`; the commit SHA differs because the GitHub API
+generated new commit metadata. No scores existed when the implementation-only sealed-label
+serialization repair was made, and no experimental setting changed.
 
 ![Development versus sealed AUROC curves](results/sealed_test/development_vs_sealed_auroc.png)
 

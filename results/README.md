@@ -119,12 +119,13 @@ and lowest-FPR95 configurations were different. The complete 108-row sealed laye
 [`sealed_test/sealed_layer_grid.csv`](sealed_test/sealed_layer_grid.csv), and the full curves are
 reported rather than only an argmax.
 
-The immutable freeze commit `451fbdb4e902e75843e8e4ef5a31745cc95f1875` was created locally
-before sealed access and its timestamp predates the first image access. Protocol deviation: the
-commit could not be pushed to GitHub before access because local GitHub credentials were
-unavailable to the command-line environment; it was pushed only during final repository sync.
-No score was available when the implementation-only string-array serialization repair was made,
-and no experimental setting changed.
+The immutable local freeze commit `451fbdb4e902e75843e8e4ef5a31745cc95f1875` was created before
+sealed access and its timestamp predates the first image access. Protocol deviation: it could not
+be published before access because command-line GitHub credentials were unavailable. During
+final sync, its byte-identical tree (`7d12bfd0dd46c5055ec2428bf93094b6188bb157`) was published as
+remote commit `d0d058bdb7abd3ff719a0553aca58580823bb714`; the commit SHA differs because the GitHub API
+generated new commit metadata. No score was available when the implementation-only string-array
+serialization repair was made, and no experimental setting changed.
 
 ## Metric note
 

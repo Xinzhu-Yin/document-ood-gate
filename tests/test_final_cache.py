@@ -1,9 +1,14 @@
 from __future__ import annotations
 
+import numpy as np
 import pandas as pd
 import pytest
 
-from document_ood_gate.final_cache import SealedBoundaryError, validate_sealed_manifest_frame
+from document_ood_gate.final_cache import (
+    SealedBoundaryError,
+    _sealed_subset_array,
+    validate_sealed_manifest_frame,
+)
 
 
 def _manifest() -> pd.DataFrame:
@@ -32,3 +37,11 @@ def test_sealed_manifest_rejects_duplicate_paths() -> None:
     frame.loc[5, "path"] = "o2.png"
     with pytest.raises(SealedBoundaryError, match="duplicate image paths"):
         validate_sealed_manifest_frame(frame, expected_n=2, expected_o=3)
+
+
+def test_sealed_subset_cache_is_pickle_free(tmp_path) -> None:
+    labels = _sealed_subset_array(pd.Series(["N", "O", "N"], dtype="string"))
+    assert labels.dtype.kind == "U"
+    cache = tmp_path / "subsets.npy"
+    np.save(cache, labels, allow_pickle=False)
+    np.testing.assert_array_equal(np.load(cache, allow_pickle=False), labels)

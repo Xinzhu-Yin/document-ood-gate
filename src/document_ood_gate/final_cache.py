@@ -122,6 +122,15 @@ def _write_json(path: Path, payload: dict[str, Any]) -> None:
     os.replace(temporary, path)
 
 
+def _sealed_subset_array(values: pd.Series) -> np.ndarray:
+    """Return labels in a pickle-free fixed-width representation."""
+
+    result = np.asarray(values.astype(str).tolist(), dtype="<U1")
+    if not np.isin(result, ("N", "O")).all():
+        raise SealedBoundaryError("Sealed subset labels must contain only N or O")
+    return result
+
+
 def extract_sealed_feature_cache(
     *,
     split_manifest_path: Path,
@@ -225,7 +234,10 @@ def extract_sealed_feature_cache(
     raw_cache.flush()
     h_doc_cache.flush()
     logits_cache.flush()
-    np.save(output / "sealed_subsets.npy", sealed["subset"].astype("U1").to_numpy())
+    # Force a fixed-width Unicode ndarray. Pandas extension/object dtypes can
+    # otherwise produce an object array that conflicts with allow_pickle=False.
+    sealed_subsets = _sealed_subset_array(sealed["subset"])
+    np.save(output / "sealed_subsets.npy", sealed_subsets, allow_pickle=False)
     ids = sealed["path"].astype(str).tolist()
     (output / "sealed_ids.jsonl").write_text(
         "".join(json.dumps({"path": value}) + "\n" for value in ids),

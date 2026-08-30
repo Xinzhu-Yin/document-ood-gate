@@ -10,7 +10,8 @@ classes should be rejected. DiT is never retrained.
 The study first reproduces the published MSP and Energy baselines, then compares output-level
 confidence scores with representation-level methods such as kNN, Mahalanobis, and ViM under one
 duplicate-aware, development-only protocol. A fixed follow-up study tests how final-layer
-readout and Transformer depth change those representation-level signals.
+readout and Transformer depth change those representation-level signals, then evaluates the
+entire pre-specified grid once on the held-out sealed test.
 
 ## Problem definition
 
@@ -31,7 +32,7 @@ predicts the correct one of the 16 classes is a separate downstream task.
 | N/O release | 1,002 N + 3,415 O target rows |
 | Independent image rerun | 1,002 N + 3,310 O = 4,312 available/recovered images |
 | Development comparison | 306 N + 974 O after removing one exact-pixel label-conflict group |
-| Sealed test | 694 N + 2,324 O = 3,018 rows; not evaluated |
+| Sealed test | 694 N + 2,324 O = 3,018 rows; opened and scored once after protocol freeze |
 | RVL reference banks | Nested 8k / 32k / 80k, balanced over 16 classes |
 | Threshold validation | Independent 8k RVL pages, 99% acceptance per score |
 | T guardrail | Independent balanced 10k RVL pages, report-only |
@@ -49,11 +50,16 @@ Execution order:
 5. **Supplementary panel:** evaluate fixed GEN, Relative Mahalanobis, ViM, and ReAct settings.
 6. **Representation layer scan:** after two hard reproduction gates, compare final-layer raw
    patch mean, `h_doc`, and CLS, then report complete Layer 1–12 raw-mean curves.
+7. **Final frozen evaluation:** decompose normalization and Residual dimension on development,
+   freeze five replication predictions, then evaluate the complete 32k D1/D2 panel once on the
+   3,018-row sealed test.
 
 Exact parameter choices and leakage controls are recorded in
 [`configs/protocol.md`](configs/protocol.md) and
 [`configs/supplementary_protocol.md`](configs/supplementary_protocol.md). The frozen layer study
-is recorded in [`configs/layer_scan_protocol.md`](configs/layer_scan_protocol.md).
+is recorded in [`configs/layer_scan_protocol.md`](configs/layer_scan_protocol.md). The final
+boundary is recorded in [`configs/sealed_test_protocol.md`](configs/sealed_test_protocol.md),
+with predictions frozen in [`configs/sealed_test_predictions.md`](configs/sealed_test_predictions.md).
 
 ## Latest results
 
@@ -107,6 +113,37 @@ are development observations and are not confirmed on held-out data.
 
 See [`results/`](results/) for the complete tables, confidence intervals, paired comparisons,
 duplicate audit, provenance, and machine-readable outputs.
+
+### Final sealed replication
+
+The final protocol reused the existing 32k reference cache and opened exactly 694 N + 2,324 O
+sealed images once. Each image received one frozen DiT forward pass; no reference image was
+re-extracted, and no method, layer, D, k, readout, or normalization was added after access.
+
+| Frozen sealed result | AUROC ↑ | FPR95 ↓ |
+|---|---:|---:|
+| MSP | 0.7372 | 0.8468 |
+| Energy | **0.7650** | 0.8369 |
+| `h_doc` Mahalanobis-32k | 0.7474 | 0.8546 |
+| `h_doc` kNN-32k (`k=10`) | 0.7405 | 0.8795 |
+| ViM-origin Residual-only | 0.7433 | 0.8808 |
+| ViM | 0.7473 | 0.8731 |
+| Layer 11 LN-pooler Mahalanobis-32k | 0.7560 | 0.8490 |
+
+All five pre-specified replication predictions were supported. Energy had the highest sealed
+AUROC across the frozen D1+D2 set, while Layer 9 LN-pooler Mahalanobis had the lowest FPR95
+(0.8171) but substantially lower AUROC (0.6607). This confirms that ranking quality and the
+95%-N operating point select different configurations. Complete tables, confidence intervals,
+prediction checks, and development-versus-sealed curves are in
+[`results/sealed_test/`](results/sealed_test/).
+
+The immutable freeze commit `451fbdb4e902e75843e8e4ef5a31745cc95f1875` was created locally
+before the first sealed image was accessed. Protocol deviation: command-line GitHub credentials
+were unavailable, so that commit was pushed only during final repository sync rather than before
+access. No scores existed when the implementation-only sealed-label serialization repair was
+made, and no experimental setting changed.
+
+![Development versus sealed AUROC curves](results/sealed_test/development_vs_sealed_auroc.png)
 
 ## Repository structure
 
@@ -162,6 +199,8 @@ doc-ood <stage> --help
 | Evaluate the main single-signal panel | `evaluate-development` / `evaluate-reference-signals` |
 | Evaluate the fixed supplementary panel | `extract-development-ood` / `evaluate-supplementary-baselines` |
 | Run the G1/G2-gated representation study | `run-layer-scan` |
+| Run final development A+B | `run-final-development` |
+| Run the one-time frozen sealed evaluation | `run-final-sealed` |
 
 Use [`configs/experiment.yaml`](configs/experiment.yaml) and
 [`configs/supplementary_baselines.yaml`](configs/supplementary_baselines.yaml) for the original
@@ -172,12 +211,15 @@ zero sealed rows loaded/scored.
 
 ## Current limits
 
-- New methods have been compared only on the 306 N + 974 O development set.
-- The 3,018-row sealed test has not been loaded, inferred, or scored.
 - New layer representations did not re-extract the independent validation/T images; existing
   `h_doc` T-guardrail results remain unchanged and this round reports development AUROC/FPR95.
-- The 395 recovered O pages are calibrated rerenders, not byte-identical original TIFFs.
-- A full shortcut audit and learned fusion Gate have not been run.
+- The final sealed round evaluated only the pre-specified D1+D2 grid; it did not run 8k
+  sensitivity, CLS, Residual-D sensitivity, new methods, or post-test redesign.
+- A full shortcut audit was not performed. The development/sealed split preserves source
+  composition, reducing source-distribution mismatch across splits, but this does not rule out
+  within-task acquisition, rendering, or source-related shortcuts. In particular, 395 recovered
+  O pages are calibrated rerenders rather than byte-identical original TIFFs.
+- No evaluated configuration is a deployable Gate: even the lowest sealed FPR95 is 0.8171.
 
 ## References
 

@@ -12,6 +12,7 @@ from .duplicates import (
     phash_candidate_pairs,
 )
 from .io import find_images, load_feature_cache, save_feature_cache, write_json
+from .layer_study import run_frozen_layer_study
 from .metadata import parse_official_image_metadata
 from .modeling import MODEL_REVISION, FrozenDiT
 from .official_reference import hybrid_reproduction_report, load_official_output
@@ -379,6 +380,26 @@ def supplementary_baselines_command(args: argparse.Namespace) -> None:
         raise SystemExit("Internal baseline reproduction gate failed; supplementary run stopped")
 
 
+def layer_scan_command(args: argparse.Namespace) -> None:
+    result = run_frozen_layer_study(
+        config_path=Path(args.config),
+        reference_manifest_path=Path(args.reference_manifest),
+        development_manifest_path=Path(args.development_manifest),
+        cache_dir=Path(args.cache_dir),
+        results_dir=Path(args.results_dir),
+        batch_size=args.batch_size,
+        device=args.device,
+    )
+    g1 = result["gates"]["G1"]
+    g2 = result["gates"]["G2"]
+    print(
+        "Frozen development-only layer scan complete: "
+        f"G1 max_abs_error={g1['max_abs_error']:.9g}; "
+        f"G2 AUROC={g2['observed_auroc']:.7f}; "
+        "sealed rows loaded/scored=0/0"
+    )
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="doc-ood")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -579,6 +600,25 @@ def build_parser() -> argparse.ArgumentParser:
     supplementary.add_argument("--bootstrap-iterations", type=int, default=2000)
     supplementary.add_argument("--seed", type=int, default=20260812)
     supplementary.set_defaults(func=supplementary_baselines_command)
+
+    layer_scan = sub.add_parser(
+        "run-layer-scan",
+        help="run the frozen G1/G2-gated DiT representation layer study",
+    )
+    layer_scan.add_argument("--config", default="configs/layer_scan.yaml")
+    layer_scan.add_argument(
+        "--reference-manifest",
+        default="data/raw/manifests/rvl_selected_extracted.csv",
+    )
+    layer_scan.add_argument(
+        "--development-manifest",
+        default="data/features/research_split_development_only.csv",
+    )
+    layer_scan.add_argument("--cache-dir", default="data/features/layer_scan")
+    layer_scan.add_argument("--results-dir", default="results/layer_scan")
+    layer_scan.add_argument("--batch-size", type=int, default=32)
+    layer_scan.add_argument("--device", default="cuda")
+    layer_scan.set_defaults(func=layer_scan_command)
 
     return parser
 

@@ -6,6 +6,7 @@ __pycache__/
 .ruff_cache/
 .test-temp-split/
 .pytest-temp*/
+.test-temp-layer-cache-*/
 
 # Never commit source documents, model weights, caches, or credentials.
 data/raw/

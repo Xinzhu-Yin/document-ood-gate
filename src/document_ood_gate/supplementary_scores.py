@@ -137,11 +137,29 @@ class ViMNormality:
         return self
 
     def normality(self, features: np.ndarray, logits: np.ndarray) -> np.ndarray:
-        if self.origin_ is None or self.null_space_ is None or self.alpha_ is None:
-            raise RuntimeError("fit must be called before normality")
-        values = np.asarray(features, dtype=np.float64)
         logit_values = _validate_logits(logits)
-        if values.ndim != 2 or len(values) != len(logit_values):
+        residual_normality = self.residual_normality(features)
+        if len(residual_normality) != len(logit_values):
             raise ValueError("Features and logits must be aligned 2D arrays")
+        return logsumexp_normality(logit_values) + residual_normality
+
+    def residual_normality(self, features: np.ndarray) -> np.ndarray:
+        """Return the alpha-scaled ViM residual term with ID-normality orientation.
+
+        This is exactly the full ViM score with its logsumexp/Energy term removed:
+        ``-alpha * ||(feature - origin) @ null_space||``.  It intentionally uses
+        the classifier-defined origin, null space, and alpha fitted by this same
+        estimator rather than a separately centered or refitted PCA model.
+        """
+
+        if self.origin_ is None or self.null_space_ is None or self.alpha_ is None:
+            raise RuntimeError("fit must be called before residual_normality")
+        values = np.asarray(features, dtype=np.float64)
+        if (
+            values.ndim != 2
+            or values.shape[1] != self.origin_.shape[0]
+            or not np.isfinite(values).all()
+        ):
+            raise ValueError("features must be a finite 2D array with the fitted dimension")
         residual = np.linalg.norm((values - self.origin_) @ self.null_space_, axis=1)
-        return logsumexp_normality(logit_values) - self.alpha_ * residual
+        return -self.alpha_ * residual

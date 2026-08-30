@@ -1,0 +1,83 @@
+study:
+  name: frozen_dit_layer_scan
+  scope: development_only
+  seed: 20260812
+  sealed_test_access: forbidden
+
+model:
+  id: microsoft/dit-base-finetuned-rvlcdip
+  revision: 23f8b03d130fb66bbc9a15df3c75d753e49240eb
+  frozen: true
+  inference_dtype: float32
+  feature_dim: 768
+  layers: 12
+  default_batch_size: 32
+
+data:
+  one_pass_images: 33280
+  reference_32k:
+    size: 32000
+    classes: 16
+    rows_per_class: 2000
+  nested_reference_8k:
+    size: 8000
+    classes: 16
+    rows_per_class: 500
+    selection: frozen_manifest_ids_only
+  development:
+    N: 306
+    O: 974
+    total: 1280
+  sealed_test:
+    N: 694
+    O: 2324
+    policy: never_read_or_score
+
+hard_gates:
+  G1:
+    max_abs_error: 1.0e-5
+  G2:
+    method: mahalanobis
+    reference_size: 8000
+    target_auroc: 0.7416556
+    absolute_tolerance: 0.005
+
+methods:
+  mahalanobis:
+    covariance: ledoit_wolf_shared
+  knn:
+    k: 10
+    similarity: cosine
+  mean_centered_pca_residual:
+    principal_dim: 512
+    origin: reference_feature_mean
+    score: negative_residual_norm
+  vim:
+    principal_dim: 512
+    origin: classifier_origin
+    residual_only_score: negative_alpha_times_residual_norm
+
+evaluation:
+  metrics: [auroc, fpr95_first_ge]
+  target_n_tpr: 0.95
+  bootstrap_iterations: 2000
+  bootstrap_seed: 20260812
+  cache_dtype: float32
+  hyperparameter_tuning: false
+  t_guardrail_policy: preserve_existing_h_doc_result_no_new_representation_scoring
+
+experiments:
+  S1:
+    layer: 12
+    representations: [raw_patch_mean, h_doc, cls]
+    methods: [mahalanobis, knn, mean_centered_pca_residual]
+    banks: [32000, 8000]
+  S1b:
+    representation: h_doc
+    bank: 32000
+    methods: [energy, vim_origin_residual, vim]
+  S2:
+    layers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    representation: raw_patch_mean
+    methods: [mahalanobis, knn, mean_centered_pca_residual]
+    banks: [32000, 8000]

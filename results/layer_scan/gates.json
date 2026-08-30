@@ -1,0 +1,17 @@
+{
+  "G1": {
+    "batch_rows": 32,
+    "max_abs_error": 0.0,
+    "passed": true,
+    "tolerance": 1e-05
+  },
+  "G2": {
+    "absolute_tolerance_exclusive": 0.005,
+    "bank_size": 8000,
+    "delta_auroc": 3.349685281373027e-06,
+    "expected_auroc": 0.7416556,
+    "method": "existing_shrinkage_mahalanobis",
+    "observed_auroc": 0.7416589496852813,
+    "passed": true
+  }
+}

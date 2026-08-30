@@ -9,7 +9,8 @@ classes should be rejected. DiT is never retrained.
 
 The study first reproduces the published MSP and Energy baselines, then compares output-level
 confidence scores with representation-level methods such as kNN, Mahalanobis, and ViM under one
-duplicate-aware, development-only protocol.
+duplicate-aware, development-only protocol. A fixed follow-up study tests how final-layer
+readout and Transformer depth change those representation-level signals.
 
 ## Problem definition
 
@@ -46,10 +47,13 @@ Execution order:
 3. **Frozen split:** use approximately 30% for development and leave 70% sealed.
 4. **Single signals:** compare five output scores, feature norm, kNN, and Mahalanobis.
 5. **Supplementary panel:** evaluate fixed GEN, Relative Mahalanobis, ViM, and ReAct settings.
+6. **Representation layer scan:** after two hard reproduction gates, compare final-layer raw
+   patch mean, `h_doc`, and CLS, then report complete Layer 1–12 raw-mean curves.
 
 Exact parameter choices and leakage controls are recorded in
 [`configs/protocol.md`](configs/protocol.md) and
-[`configs/supplementary_protocol.md`](configs/supplementary_protocol.md).
+[`configs/supplementary_protocol.md`](configs/supplementary_protocol.md). The frozen layer study
+is recorded in [`configs/layer_scan_protocol.md`](configs/layer_scan_protocol.md).
 
 ## Latest results
 
@@ -78,6 +82,28 @@ Representation-based scores have slightly better development point estimates tha
 confidence baselines. However, the best observed FPR95 is still 0.7988: when 95% of N is
 accepted, approximately 79.88% of O is also accepted. The current methods therefore do not yet
 form a deployable Gate, and overlapping confidence intervals prevent a final winner claim.
+
+### Frozen representation layer scan
+
+Both execution gates passed: on the first float32 batch (`n=32`), Layer-12 raw patch mean
+reconstructed `h_doc` with maximum absolute error `0 < 1e-5`, and the new Mahalanobis-8k run
+reproduced AUROC `0.7416589` against target `0.7416556`. Exactly 32,000 reference and 1,280
+development images were extracted once; the sealed test was not loaded or scored.
+
+| Development observation | 32k AUROC ↑ | 32k FPR95 ↓ |
+|---|---:|---:|
+| L12 raw mean + Mahalanobis | 0.6567 | 0.9579 |
+| `h_doc` + Mahalanobis | 0.7447 | 0.8162 |
+| L12 CLS + Mahalanobis | 0.6633 | 0.8943 |
+| Layer 10 raw mean + kNN | **0.7489** | 0.9425 |
+| ViM-origin Residual-only | 0.7424 | 0.8080 |
+| Full ViM | 0.7451 | **0.7988** |
+
+The complete curves, confidence intervals, 8k sensitivity results, variance diagnostics, and
+Residual definitions are in [`results/layer_scan/`](results/layer_scan/). Layer-specific values
+are development observations and are not confirmed on held-out data.
+
+![Development AUROC across Transformer layers](results/layer_scan/layer_auroc_curves.png)
 
 See [`results/`](results/) for the complete tables, confidence intervals, paired comparisons,
 duplicate audit, provenance, and machine-readable outputs.
@@ -135,18 +161,23 @@ doc-ood <stage> --help
 | Sample and extract RVL references | `sample-rvl` / `extract-rvl-sample` / `extract-rvl-features` |
 | Evaluate the main single-signal panel | `evaluate-development` / `evaluate-reference-signals` |
 | Evaluate the fixed supplementary panel | `extract-development-ood` / `evaluate-supplementary-baselines` |
+| Run the G1/G2-gated representation study | `run-layer-scan` |
 
 Use [`configs/experiment.yaml`](configs/experiment.yaml) and
-[`configs/supplementary_baselines.yaml`](configs/supplementary_baselines.yaml) for the frozen
-values. Each command validates counts and refuses incompatible inputs; the supplementary command
-also rejects a manifest containing sealed rows before opening its OOD feature cache.
+[`configs/supplementary_baselines.yaml`](configs/supplementary_baselines.yaml) for the original
+frozen values, and [`configs/layer_scan.yaml`](configs/layer_scan.yaml) for the layer study. Each
+command validates counts and refuses incompatible inputs. The layer command accepts only the
+physically isolated development manifest, matches the 8k bank by frozen image IDs, and records
+zero sealed rows loaded/scored.
 
 ## Current limits
 
 - New methods have been compared only on the 306 N + 974 O development set.
 - The 3,018-row sealed test has not been loaded, inferred, or scored.
+- New layer representations did not re-extract the independent validation/T images; existing
+  `h_doc` T-guardrail results remain unchanged and this round reports development AUROC/FPR95.
 - The 395 recovered O pages are calibrated rerenders, not byte-identical original TIFFs.
-- A full shortcut audit, learned fusion Gate, and Transformer layer scan have not been run.
+- A full shortcut audit and learned fusion Gate have not been run.
 
 ## References
 

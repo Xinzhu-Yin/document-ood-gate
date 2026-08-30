@@ -1,0 +1,24 @@
+{
+  "D_sensitivity_role": "diagnostic_not_hyperparameter_optimization",
+  "bootstrap_iterations": 2000,
+  "bootstrap_seed": 20260812,
+  "development_N": 306,
+  "development_O": 974,
+  "diagnostic_layer_selection": "post_hoc representative early, transition, and late depth regions; not model selection",
+  "elapsed_seconds": 379.7417054999969,
+  "feature_extraction_images": 0,
+  "finished_at": "2026-08-30T13:56:52.727067+00:00",
+  "primary_D": 512,
+  "reference_rows": 32000,
+  "reused_layer_cache": "data\\features\\layer_scan",
+  "sanity": {
+    "l12_detector_result_max_abs_error": 1.1102230246251565e-16,
+    "l12_ln_pooler_vs_h_doc_max_abs_error": 0.0,
+    "passed": true,
+    "required_feature_tolerance": 1e-05
+  },
+  "scope": "development_only_final_ablation",
+  "sealed_rows_loaded": 0,
+  "sealed_rows_scored": 0,
+  "started_at": "2026-08-30T13:50:32.990739+00:00"
+}

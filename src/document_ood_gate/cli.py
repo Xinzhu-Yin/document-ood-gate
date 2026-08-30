@@ -31,6 +31,7 @@ from .supplementary_evaluation import (
     supplementary_results_frame,
     supplementary_summary_markdown,
 )
+from .final_study import run_final_development, run_final_sealed
 
 
 def extract_command(args: argparse.Namespace) -> None:
@@ -400,6 +401,41 @@ def layer_scan_command(args: argparse.Namespace) -> None:
     )
 
 
+def final_development_command(args: argparse.Namespace) -> None:
+    result = run_final_development(
+        config_path=Path(args.config),
+        layer_cache_dir=Path(args.layer_cache_dir),
+        existing_layer_results=Path(args.existing_layer_results),
+        output_dir=Path(args.output_dir),
+        knn_device=args.device,
+    )
+    print(
+        "Final development A+B complete: "
+        f"elapsed={result['metadata']['elapsed_seconds']:.1f}s; "
+        "sealed rows loaded/scored=0/0"
+    )
+
+
+def final_sealed_command(args: argparse.Namespace) -> None:
+    result = run_final_sealed(
+        config_path=Path(args.config),
+        split_manifest_path=Path(args.split_manifest),
+        layer_cache_dir=Path(args.layer_cache_dir),
+        sealed_cache_dir=Path(args.sealed_cache_dir),
+        development_results_dir=Path(args.development_results_dir),
+        output_dir=Path(args.output_dir),
+        freeze_commit_sha=args.freeze_commit_sha,
+        freeze_commit_timestamp=args.freeze_commit_timestamp,
+        batch_size=args.batch_size,
+        device=args.device,
+    )
+    print(
+        "Final sealed evaluation complete: "
+        f"rows={result['metadata']['sealed_extracted_rows']}; "
+        "post-sealed experimental iteration=false"
+    )
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="doc-ood")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -619,6 +655,41 @@ def build_parser() -> argparse.ArgumentParser:
     layer_scan.add_argument("--batch-size", type=int, default=32)
     layer_scan.add_argument("--device", default="cuda")
     layer_scan.set_defaults(func=layer_scan_command)
+
+    final_development = sub.add_parser(
+        "run-final-development",
+        help="run frozen development-only normalization and Residual-D diagnostics",
+    )
+    final_development.add_argument("--config", default="configs/final_experiment.yaml")
+    final_development.add_argument(
+        "--layer-cache-dir", default="data/features/layer_scan"
+    )
+    final_development.add_argument(
+        "--existing-layer-results", default="results/layer_scan/full_results.csv"
+    )
+    final_development.add_argument("--output-dir", default="results/final_ablation")
+    final_development.add_argument("--device", default="cuda")
+    final_development.set_defaults(func=final_development_command)
+
+    final_sealed = sub.add_parser(
+        "run-final-sealed",
+        help="open the frozen sealed split once and run only the pre-specified D1/D2 grid",
+    )
+    final_sealed.add_argument("--config", default="configs/final_experiment.yaml")
+    final_sealed.add_argument(
+        "--split-manifest", default="data/features/research_split.csv"
+    )
+    final_sealed.add_argument("--layer-cache-dir", default="data/features/layer_scan")
+    final_sealed.add_argument("--sealed-cache-dir", default="data/features/sealed_final")
+    final_sealed.add_argument(
+        "--development-results-dir", default="results/final_ablation"
+    )
+    final_sealed.add_argument("--output-dir", default="results/sealed_test")
+    final_sealed.add_argument("--freeze-commit-sha", required=True)
+    final_sealed.add_argument("--freeze-commit-timestamp", required=True)
+    final_sealed.add_argument("--batch-size", type=int, default=32)
+    final_sealed.add_argument("--device", default="cuda")
+    final_sealed.set_defaults(func=final_sealed_command)
 
     return parser
 

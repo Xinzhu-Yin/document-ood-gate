@@ -43,3 +43,21 @@ def test_parser_exposes_development_only_extraction() -> None:
     assert args.func is cli.extract_development_ood_command
     assert args.expected == 1294
     assert args.dtype == "float32"
+
+
+def test_parser_exposes_final_development_and_sealed_commands() -> None:
+    development = cli.build_parser().parse_args(["run-final-development"])
+    assert development.config == "configs/final_experiment.yaml"
+    assert development.output_dir == "results/final_ablation"
+
+    sealed = cli.build_parser().parse_args(
+        [
+            "run-final-sealed",
+            "--freeze-commit-sha",
+            "a" * 40,
+            "--freeze-commit-timestamp",
+            "2026-08-30T10:00:00+00:00",
+        ]
+    )
+    assert sealed.sealed_cache_dir == "data/features/sealed_final"
+    assert sealed.output_dir == "results/sealed_test"

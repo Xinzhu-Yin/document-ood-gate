@@ -651,7 +651,7 @@ def build_parser() -> argparse.ArgumentParser:
         default="data/features/research_split_development_only.csv",
     )
     layer_scan.add_argument("--cache-dir", default="data/features/layer_scan")
-    layer_scan.add_argument("--results-dir", default="results/layer_scan")
+    layer_scan.add_argument("--results-dir", default="results/runs/layer_scan")
     layer_scan.add_argument("--batch-size", type=int, default=32)
     layer_scan.add_argument("--device", default="cuda")
     layer_scan.set_defaults(func=layer_scan_command)
@@ -665,9 +665,11 @@ def build_parser() -> argparse.ArgumentParser:
         "--layer-cache-dir", default="data/features/layer_scan"
     )
     final_development.add_argument(
-        "--existing-layer-results", default="results/layer_scan/full_results.csv"
+        "--existing-layer-results", default="results/runs/layer_scan/full_results.csv"
     )
-    final_development.add_argument("--output-dir", default="results/final_ablation")
+    final_development.add_argument(
+        "--output-dir", default="results/runs/final_ablation"
+    )
     final_development.add_argument("--device", default="cuda")
     final_development.set_defaults(func=final_development_command)
 
@@ -682,9 +684,9 @@ def build_parser() -> argparse.ArgumentParser:
     final_sealed.add_argument("--layer-cache-dir", default="data/features/layer_scan")
     final_sealed.add_argument("--sealed-cache-dir", default="data/features/sealed_final")
     final_sealed.add_argument(
-        "--development-results-dir", default="results/final_ablation"
+        "--development-results-dir", default="results/runs/final_ablation"
     )
-    final_sealed.add_argument("--output-dir", default="results/sealed_test")
+    final_sealed.add_argument("--output-dir", default="results/runs/sealed_test")
     final_sealed.add_argument("--freeze-commit-sha", required=True)
     final_sealed.add_argument("--freeze-commit-timestamp", required=True)
     final_sealed.add_argument("--batch-size", type=int, default=32)
@@ -701,3 +703,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

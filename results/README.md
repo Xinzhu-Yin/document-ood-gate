@@ -3,17 +3,31 @@
 This directory contains the complete aggregate evidence for the project. Raw document images,
 model weights, and extracted feature matrices are intentionally excluded from Git.
 
+## Directory layout
+
+```text
+results/
+├── tables/       # CSV/JSON metric tables, ordered by research stage
+├── figures/      # Publication-ready plots, ordered by research stage
+├── reports/      # Human-readable stage summaries
+└── supporting/   # Data audits, provenance, gates, and run metadata
+```
+
+Curated GitHub artifacts live only in these four locations. Re-running the command-line pipeline
+writes mixed raw outputs to the ignored `results/runs/<stage>/` workspace, so generated files do
+not make this directory untidy again.
+
 ## Reading order
 
 | Stage | Purpose | Human-readable result | Machine-readable evidence |
 |---|---|---|---|
-| 1. Published-baseline reproduction | Verify MSP/Energy before new experiments | Summary below | [`reproduction/`](reproduction/) |
-| 2. Data and duplicate audit | Record release gaps, duplicates, and the frozen split | Summary below | [`data_release_status.json`](data_release_status.json), [`duplicate_audit/`](duplicate_audit/) |
-| 3. Main single-signal panel | Compare output and representation scores | [`single_signals/development_summary.md`](single_signals/development_summary.md) | [`single_signals/development_all_single_signals.json`](single_signals/development_all_single_signals.json) |
-| 4. Supplementary panel | Evaluate GEN, RMD, ViM, and ReAct | [`supplementary_baselines/development_summary.md`](supplementary_baselines/development_summary.md) | [`supplementary_baselines/development_results.csv`](supplementary_baselines/development_results.csv), [`development_results.json`](supplementary_baselines/development_results.json) |
-| 5. Representation layer scan | Compare final-layer readouts and full Layer 1–12 curves | [`layer_scan/development_summary.md`](layer_scan/development_summary.md) | [`layer_scan/full_results.csv`](layer_scan/full_results.csv), [`layer_scan/full_results.json`](layer_scan/full_results.json), [`layer_scan/vim_decomposition.csv`](layer_scan/vim_decomposition.csv) |
-| 6. Final development ablations | Isolate LayerNorm and diagnose fixed Residual dimensions | [`final_ablation/development_summary.md`](final_ablation/development_summary.md) | [`final_ablation/development_normalization_results.csv`](final_ablation/development_normalization_results.csv), [`final_ablation/development_residual_d_sensitivity.csv`](final_ablation/development_residual_d_sensitivity.csv) |
-| 7. One-time sealed replication | Evaluate the frozen D1+D2 panel and P1–P5 | [`sealed_test/final_summary.md`](sealed_test/final_summary.md) | [`sealed_test/complete_results.csv`](sealed_test/complete_results.csv), [`sealed_test/replication_predictions_evaluation.json`](sealed_test/replication_predictions_evaluation.json), [`sealed_test/run_metadata.json`](sealed_test/run_metadata.json) |
+| 1. Published-baseline reproduction | Verify MSP/Energy before new experiments | Summary below | [`tables/01_reproduction/`](tables/01_reproduction/) |
+| 2. Data and duplicate audit | Record release gaps, duplicates, and the frozen split | Summary below | [`supporting/02_data_audit/`](supporting/02_data_audit/) |
+| 3. Main single-signal panel | Compare output and representation scores | [`reports/03_single_signals.md`](reports/03_single_signals.md) | [`tables/03_single_signals/`](tables/03_single_signals/) |
+| 4. Supplementary panel | Evaluate GEN, RMD, ViM, and ReAct | [`reports/04_supplementary_baselines.md`](reports/04_supplementary_baselines.md) | [`tables/04_supplementary_baselines/`](tables/04_supplementary_baselines/) |
+| 5. Representation layer scan | Compare final-layer readouts and full Layer 1–12 curves | [`reports/05_layer_scan.md`](reports/05_layer_scan.md) | [`tables/05_layer_scan/`](tables/05_layer_scan/), [`figures/05_layer_scan/`](figures/05_layer_scan/) |
+| 6. Final development ablations | Isolate LayerNorm and diagnose fixed Residual dimensions | [`reports/06_final_ablation.md`](reports/06_final_ablation.md) | [`tables/06_final_ablation/`](tables/06_final_ablation/), [`figures/06_final_ablation/`](figures/06_final_ablation/) |
+| 7. One-time sealed replication | Evaluate the frozen D1+D2 panel and P1–P5 | [`reports/07_sealed_test.md`](reports/07_sealed_test.md) | [`tables/07_sealed_test/`](tables/07_sealed_test/), [`figures/07_sealed_test/`](figures/07_sealed_test/), [`supporting/07_sealed_test/`](supporting/07_sealed_test/) |
 
 ## 1. Reproduction gate
 
@@ -116,7 +130,7 @@ forward pass each. The existing 32k reference cache was reused; reference images
 P1–P5 were all supported. Energy had the highest AUROC in the complete frozen set. Layer 9
 LN-pooler Mahalanobis had the lowest FPR95 (0.8171) but AUROC 0.6607; therefore the highest-AUROC
 and lowest-FPR95 configurations were different. The complete 108-row sealed layer grid is in
-[`sealed_test/sealed_layer_grid.csv`](sealed_test/sealed_layer_grid.csv), and the full curves are
+[`tables/07_sealed_test/sealed_layer_grid.csv`](tables/07_sealed_test/sealed_layer_grid.csv), and the full curves are
 reported rather than only an argmax.
 
 The immutable local freeze commit `451fbdb4e902e75843e8e4ef5a31745cc95f1875` was created before
@@ -143,3 +157,4 @@ A full shortcut audit was not performed. The development/sealed split preserves 
 composition, reducing source-distribution mismatch across splits, but this does not rule out
 within-task acquisition, rendering, or source-related shortcuts. In particular, 395 recovered O
 pages are calibrated rerenders rather than byte-identical original TIFFs.
+

@@ -46,9 +46,15 @@ def test_parser_exposes_development_only_extraction() -> None:
 
 
 def test_parser_exposes_final_development_and_sealed_commands() -> None:
+    layer_scan = cli.build_parser().parse_args(["run-layer-scan"])
+    assert layer_scan.results_dir == "results/runs/layer_scan"
+
     development = cli.build_parser().parse_args(["run-final-development"])
     assert development.config == "configs/final_experiment.yaml"
-    assert development.output_dir == "results/final_ablation"
+    assert development.output_dir == "results/runs/final_ablation"
+    assert development.existing_layer_results == (
+        "results/runs/layer_scan/full_results.csv"
+    )
 
     sealed = cli.build_parser().parse_args(
         [
@@ -60,4 +66,6 @@ def test_parser_exposes_final_development_and_sealed_commands() -> None:
         ]
     )
     assert sealed.sealed_cache_dir == "data/features/sealed_final"
-    assert sealed.output_dir == "results/sealed_test"
+    assert sealed.output_dir == "results/runs/sealed_test"
+    assert sealed.development_results_dir == "results/runs/final_ablation"
+

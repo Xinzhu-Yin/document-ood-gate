@@ -106,10 +106,11 @@ development images were extracted once; the sealed test was not loaded or scored
 | Full ViM | 0.7451 | **0.7988** |
 
 The complete curves, confidence intervals, 8k sensitivity results, variance diagnostics, and
-Residual definitions are in [`results/layer_scan/`](results/layer_scan/). Layer-specific values
-are development observations and are not confirmed on held-out data.
+Residual definitions are in the [layer-scan report](results/reports/05_layer_scan.md) and
+[machine-readable tables](results/tables/05_layer_scan/). Layer-specific values are development
+observations and are not confirmed on held-out data.
 
-![Development AUROC across Transformer layers](results/layer_scan/layer_auroc_curves.png)
+![Development AUROC across Transformer layers](results/figures/05_layer_scan/layer_auroc_curves.png)
 
 See [`results/`](results/) for the complete tables, confidence intervals, paired comparisons,
 duplicate audit, provenance, and machine-readable outputs.
@@ -134,8 +135,9 @@ All five pre-specified replication predictions were supported. Energy had the hi
 AUROC across the frozen D1+D2 set, while Layer 9 LN-pooler Mahalanobis had the lowest FPR95
 (0.8171) but substantially lower AUROC (0.6607). This confirms that ranking quality and the
 95%-N operating point select different configurations. Complete tables, confidence intervals,
-prediction checks, and development-versus-sealed curves are in
-[`results/sealed_test/`](results/sealed_test/).
+prediction checks, and development-versus-sealed curves are in the
+[sealed-test report](results/reports/07_sealed_test.md),
+[tables](results/tables/07_sealed_test/), and [figures](results/figures/07_sealed_test/).
 
 The immutable local freeze commit `451fbdb4e902e75843e8e4ef5a31745cc95f1875` was created before
 the first sealed image was accessed. Protocol deviation: command-line GitHub credentials were
@@ -145,7 +147,7 @@ unavailable, so it was not published before access. During final sync, its byte-
 generated new commit metadata. No scores existed when the implementation-only sealed-label
 serialization repair was made, and no experimental setting changed.
 
-![Development versus sealed AUROC curves](results/sealed_test/development_vs_sealed_auroc.png)
+![Development versus sealed AUROC curves](results/figures/07_sealed_test/development_vs_sealed_auroc.png)
 
 ## Repository structure
 
@@ -153,7 +155,7 @@ serialization repair was made, and no experimental setting changed.
 .
 ├── README.md          # Background, design, headline results, and reproduction entry point
 ├── configs/           # Frozen YAML settings and executable experimental protocols
-├── results/           # Complete human-readable and machine-readable experiment outputs
+├── results/           # Curated tables, figures, reports, and supporting evidence
 ├── src/               # Reusable Python implementation and command-line pipeline
 ├── tests/             # Metric, data-isolation, and pipeline regression tests
 ├── pyproject.toml     # Exact Python package and dependency specification
@@ -236,3 +238,4 @@ zero sealed rows loaded/scored.
 - [Ren et al. — Relative Mahalanobis](https://arxiv.org/abs/2106.09022)
 - [Sun et al. — ReAct](https://proceedings.neurips.cc/paper_files/paper/2021/hash/01894d6f048493d2cacde3c579c315a3-Abstract.html)
 - [Liu et al. — GEN implementation](https://github.com/XixiLiu95/GEN)
+

@@ -6,6 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "document-ood-gate"
 version = "0.1.0"
 description = "Reproducible single-signal OOD Gate evaluation for a frozen DiT classifier"
+readme = "README.md"
 requires-python = ">=3.12,<3.13"
 dependencies = [
   "torch==2.5.1",
@@ -27,6 +28,10 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest==8.3.4", "ruff==0.9.6"]
+
+[project.urls]
+Repository = "https://github.com/Xinzhu-Yin/document-ood-gate"
+Documentation = "https://github.com/Xinzhu-Yin/document-ood-gate/blob/main/docs/REPRODUCIBILITY.md"
 
 [project.scripts]
 doc-ood = "document_ood_gate.cli:main"

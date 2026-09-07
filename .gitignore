@@ -27,3 +27,22 @@ results/runs/
 artifacts/
 logs/
 tmp/
+
+# Local environments, build products, editor state, and credential files.
+venv/
+env/
+build/
+dist/
+.coverage
+htmlcov/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.pem
+*.key
+*.p12
+*.pfx
+.netrc
+credentials.json
+token.json

@@ -3,6 +3,13 @@
 This directory contains the complete aggregate evidence for the project. Raw document images,
 model weights, and extracted feature matrices are intentionally excluded from Git.
 
+[Project overview](../README.md) · [Study and limitations](../docs/STUDY.md) ·
+[Data provenance](../docs/DATA.md)
+
+The study is complete. Stages 1–6 below describe historical development checkpoints;
+stage 7 is the final sealed evaluation. For a quick view without experiments, run
+`python scripts/preview_results.py` from the repository root.
+
 ## Directory layout
 
 ```text
@@ -99,7 +106,9 @@ ReAct substantially reduces AUROC in this signed DiT representation setting.
 | Full ViM | 0.7451 | 0.7988 |
 
 The complete 12-layer 32k primary and 8k sensitivity curves are reported rather than only an
-argmax. Any layer-specific pattern is a development observation; not confirmed on held-out data.
+argmax. At this checkpoint, layer-specific patterns were development observations.
+The later frozen D1/D2 replication is reported in stage 7; 8k sensitivity and CLS were
+not included in that sealed panel.
 S1/S2 use reference-mean PCA Residual, while S1b uses the existing classifier-origin ViM
 Residual. See the linked summary for all confidence intervals and plots.
 

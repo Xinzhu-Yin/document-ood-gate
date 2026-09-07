@@ -52,14 +52,11 @@ environment lockfile. The model revision is separately fixed in
 
 The existing tests cover numerical behavior, duplicate grouping, split isolation,
 caches, and pipeline handling. Running these tests is software validation; it does
-not reproduce the recorded full-image study. This presentation cleanup was checked
-without installing the full research environment; it does not certify a fresh
-full-suite run or platform-specific GPU compatibility.
+not reproduce the recorded full-image study.
 
 ## Historical pipeline map
 
-These commands document the existing research implementation. They are not needed
-to explore the portfolio. After activating the environment, inspect each command
+These commands document the research implementation. After activating the environment, inspect each command
 with `doc-ood <command> --help`; otherwise use the full executable path shown above.
 
 | Stage | Commands | Inputs needed |
@@ -104,8 +101,7 @@ Raw document images, per-image feature caches, complete runtime manifests, and
 model weights must be obtained or regenerated separately.
 
 Model access may download the pinned Hugging Face checkpoint. The PDF-recovery
-stage additionally needs Poppler. The layer/final commands default to CUDA;
-no new CPU/GPU runtime or hardware-performance claim was measured during cleanup.
+stage additionally needs Poppler. The layer/final commands default to CUDA.
 
 Keep local data under the ignored `data/raw/`, `data/cache/`, and
 `data/features/` locations. Write independent rerun outputs under

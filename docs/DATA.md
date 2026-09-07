@@ -54,7 +54,4 @@ creators. See [references](REFERENCES.md). This project does not grant rights to
 redistribute third-party documents or weights; obtain them from their source and
 follow the terms provided there.
 
-This repository currently has no project-wide license file. No new reuse license
-is assigned by the presentation cleanup, and it should not be described as
-MIT-licensed or Apache-licensed. An explicit license can be added by the repository
-owner after deciding the intended reuse terms and scope.
+This repository currently has no project-wide license file.

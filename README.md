@@ -11,7 +11,7 @@ into better sealed-test AUROC than Energy. Energy reached **0.7650 AUROC**, but 
 supported, shifted documents. The study documents why these scores are insufficient
 for a reliable deployment gate.
 
-[中文介绍](docs/OVERVIEW.zh-CN.md) · [Study and limitations](docs/STUDY.md) ·
+[Study and limitations](docs/STUDY.md) ·
 [Complete results](results/README.md) · [Reproducibility](docs/REPRODUCIBILITY.md) ·
 [Data and attribution](docs/DATA.md)
 
@@ -102,7 +102,7 @@ To inspect the implementation or its existing tests, use the separate
 
 | Location | Contents |
 |---|---|
-| [docs/](docs/) | Study narrative, setup guide, data provenance, references, Chinese overview |
+| [docs/](docs/) | Study narrative, setup guide, data provenance, and references |
 | [configs/](configs/) | Original frozen settings and historical protocols |
 | [src/document_ood_gate/](src/document_ood_gate/) | Model interface, scoring, audit, evaluation, and reporting |
 | [tests/](tests/) | Existing metric, split-isolation, cache, and pipeline regression tests |

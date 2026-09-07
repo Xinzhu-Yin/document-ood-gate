@@ -127,7 +127,7 @@ supports inspection of saved aggregate evidence without claiming turnkey,
 bit-for-bit reproduction from a fresh clone.
 
 The final panel excludes new methods, 8k sealed sensitivity, a sealed CLS scan,
-and D tuning. No new experiment is part of the presentation cleanup.
+and D tuning.
 
 ## Original protocol map
 

@@ -8,7 +8,7 @@ features can identify those unsupported, or out-of-distribution (OOD), inputs.
 
 The Python pipeline audits **4,312 document images**, compares features across
 **12 Transformer layers**, and evaluates a fixed set of methods on **3,018 held-out
-images**. It uses Microsoft's pretrained, frozen [16-class DiT model](https://huggingface.co/microsoft/dit-base-finetuned-rvlcdip).
+images**. It uses Microsoft's pretrained, frozen [16-class Document Image Transformer (DiT)](https://huggingface.co/microsoft/dit-base-finetuned-rvlcdip).
 The work covers data preparation, model integration, statistical evaluation, and
 representation analysis.
 
@@ -26,8 +26,9 @@ representation analysis.
 | Mean-centred PCA residual | 0.6571 | 0.7449 |
 
 AUROC measures separation between supported and unsupported inputs, rather than
-classification accuracy. These rows use a fixed 32k reference bank;
-[the saved table](results/tables/07_sealed_test/sealed_layer_grid.csv) includes
+classification accuracy. These scores use a separate reference bank of 32,000 familiar
+pages to fit the detectors; the classifier's weights remain unchanged.
+[The saved table](results/tables/07_sealed_test/sealed_layer_grid.csv) includes
 all 108 layer/readout/method combinations and confidence intervals.
 
 ![AUROC across 12 layers: development and held-out comparisons of raw, LN-free, and LN-pooler features](results/figures/07_sealed_test/development_vs_sealed_auroc.png)

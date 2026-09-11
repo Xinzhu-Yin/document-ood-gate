@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "document-ood-gate"
 version = "0.1.0"
-description = "Reproducible single-signal OOD Gate evaluation for a frozen DiT classifier"
+description = "OOD evaluation and representation analysis for a frozen document classifier"
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
 dependencies = [
